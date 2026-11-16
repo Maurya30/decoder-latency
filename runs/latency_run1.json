@@ -1,0 +1,98 @@
+{
+  "cnn / cpu / back to back": {
+    "model": "cnn",
+    "device": "cpu",
+    "mode": "back to back",
+    "steps": 2000,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "trained here, 49.8% phoneme error rate",
+    "typical": 0.14952057972550392,
+    "p99": 1.687982929870486,
+    "worst": 11.396749876439571
+  },
+  "cnn / mps / back to back": {
+    "model": "cnn",
+    "device": "mps",
+    "mode": "back to back",
+    "steps": 2000,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "trained here, 49.8% phoneme error rate",
+    "typical": 0.7404169300571084,
+    "p99": 1.3861262425780296,
+    "worst": 3.9001249242573977
+  },
+  "their-gru / cpu / back to back": {
+    "model": "their-gru",
+    "device": "cpu",
+    "mode": "back to back",
+    "steps": 2000,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "UC Davis design, random weights (timing only)",
+    "typical": 1.8726454582065344,
+    "p99": 3.492052275687456,
+    "worst": 62.25687498226762
+  },
+  "their-gru / mps / back to back": {
+    "model": "their-gru",
+    "device": "mps",
+    "mode": "back to back",
+    "steps": 2000,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "UC Davis design, random weights (timing only)",
+    "typical": 1.6583335818722844,
+    "p99": 3.2352373935282226,
+    "worst": 10.706792119890451
+  },
+  "cnn / cpu / paced": {
+    "model": "cnn",
+    "device": "cpu",
+    "mode": "paced",
+    "steps": 500,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "trained here, 49.8% phoneme error rate",
+    "typical": 1.3723541051149368,
+    "p99": 2.5941034127026787,
+    "worst": 4.17895894497633
+  },
+  "cnn / mps / paced": {
+    "model": "cnn",
+    "device": "mps",
+    "mode": "paced",
+    "steps": 500,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "trained here, 49.8% phoneme error rate",
+    "typical": 2.3677085991948843,
+    "p99": 3.6139363539405163,
+    "worst": 6.882083136588335
+  },
+  "their-gru / cpu / paced": {
+    "model": "their-gru",
+    "device": "cpu",
+    "mode": "paced",
+    "steps": 500,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "UC Davis design, random weights (timing only)",
+    "typical": 6.0168750351294875,
+    "p99": 13.165932567790145,
+    "worst": 16.189374960958958
+  },
+  "their-gru / mps / paced": {
+    "model": "their-gru",
+    "device": "mps",
+    "mode": "paced",
+    "steps": 500,
+    "budget_ms": 80,
+    "over_budget": 2,
+    "note": "UC Davis design, random weights (timing only)",
+    "typical": 5.890771048143506,
+    "p99": 47.32106110779568,
+    "worst": 136.85012492351234
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "cnn / cpu / back to back": {
+    "model": "cnn",
+    "device": "cpu",
+    "mode": "back to back",
+    "steps": 2000,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "trained here, 49.8% phoneme error rate",
+    "typical": 0.13224990107119083,
+    "p99": 0.22142788162454963,
+    "worst": 2.3367919493466616
+  },
+  "cnn / mps / back to back": {
+    "model": "cnn",
+    "device": "mps",
+    "mode": "back to back",
+    "steps": 2000,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "trained here, 49.8% phoneme error rate",
+    "typical": 0.4401039332151413,
+    "p99": 1.0042422008700667,
+    "worst": 5.882374942302704
+  },
+  "their-gru / cpu / back to back": {
+    "model": "their-gru",
+    "device": "cpu",
+    "mode": "back to back",
+    "steps": 2000,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "UC Davis published weights",
+    "typical": 1.8921664450317621,
+    "p99": 3.040436669252812,
+    "worst": 5.442334106191993
+  },
+  "their-gru / mps / back to back": {
+    "model": "their-gru",
+    "device": "mps",
+    "mode": "back to back",
+    "steps": 2000,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "UC Davis published weights",
+    "typical": 1.7106044106185436,
+    "p99": 3.409478352405131,
+    "worst": 9.465584065765142
+  },
+  "cnn / cpu / paced": {
+    "model": "cnn",
+    "device": "cpu",
+    "mode": "paced",
+    "steps": 500,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "trained here, 49.8% phoneme error rate",
+    "typical": 1.2598754838109016,
+    "p99": 3.406005366705355,
+    "worst": 4.807292018085718
+  },
+  "cnn / mps / paced": {
+    "model": "cnn",
+    "device": "mps",
+    "mode": "paced",
+    "steps": 500,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "trained here, 49.8% phoneme error rate",
+    "typical": 2.3641041480004787,
+    "p99": 5.537824148777871,
+    "worst": 8.337541949003935
+  },
+  "their-gru / cpu / paced": {
+    "model": "their-gru",
+    "device": "cpu",
+    "mode": "paced",
+    "steps": 500,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "UC Davis published weights",
+    "typical": 8.105416549369693,
+    "p99": 18.255545059218996,
+    "worst": 48.20066597312689
+  },
+  "their-gru / mps / paced": {
+    "model": "their-gru",
+    "device": "mps",
+    "mode": "paced",
+    "steps": 500,
+    "budget_ms": 80,
+    "over_budget": 0,
+    "note": "UC Davis published weights",
+    "typical": 5.905416561290622,
+    "p99": 10.608536861836907,
+    "worst": 19.5359589997679
+  }
+}
