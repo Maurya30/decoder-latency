@@ -92,6 +92,21 @@ Training on 8 days needs about 3 GB of memory.
 
 Charts and numbers land in `runs/`.
 
+## See it run
+
+```bash
+.venv/bin/python demo.py
+```
+
+Then open http://localhost:8765, pick a sentence and press Play. The page replays the
+recording at real speed and shows three things as they happen: the frames arriving,
+the phonemes each decoder hears, and the time every step took against the 80 ms
+deadline. To watch the dropped-frames result, lose 20% of frames in runs of 10 and have
+the receiver fill the holes with zeros.
+
+It is a replay of recorded data on this computer, run through the same code as
+everything else here. Nothing in it is live from a person.
+
 ## Results
 
 Measured on 16 November 2026 on an Apple M5 laptop with other apps running.
@@ -225,6 +240,7 @@ between 49.3% and 52.7% and the GRU between 15.6% and 16.8%
 | `frames.py` | numbered frames with a CRC, and the receiver |
 | `drop_test.py` | error rate against lost frames |
 | `charts.py` | the charts |
+| `demo.py`, `demo.html` | a local page that shows both decoders running live |
 | `check.py` | checks the seven key pieces behave |
 
 ## Who wrote what
@@ -232,4 +248,4 @@ between 49.3% and 52.7% and the GRU between 15.6% and 16.8%
 Built with Claude (AI). I wrote the CNN's layers, its forward pass and its
 output-length function by hand. Claude wrote the rest: the data loading, the training
 loop, the live loop and its timing, the frames and receiver, the rebuild of the UC
-Davis model, and the charts.
+Davis model, the charts, and the demo page.

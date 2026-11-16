@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>decoder-latency: live replay</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface: #fcfcfb; --panel: #ffffff; --ink: #0b0b0b; --soft: #52514e; --muted: #8a8884;
+    --grid: #e6e5e0; --blue: #2a78d6; --orange: #eb6834;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--ink);
+         font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1120px; margin: 0 auto; padding: 28px 20px 40px; }
+  h1 { font-size: 24px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  h2 { font-size: 16px; margin: 0 0 4px; }
+  .sub, .note { color: var(--soft); margin: 0; }
+  .note { font-size: 13.5px; margin-bottom: 12px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 14px; align-items: end; margin: 22px 0 18px; }
+  label { display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; color: var(--soft); }
+  select, button { font: inherit; font-size: 14px; padding: 7px 10px; border-radius: 8px;
+                   border: 1px solid #cfcdc6; background: var(--panel); color: var(--ink); }
+  select#sentence { width: 330px; }
+  button { background: var(--ink); color: #fff; border-color: var(--ink); padding: 7px 22px; cursor: pointer; font-weight: 600; }
+  button:hover { background: #2b2b2b; }
+  #status { color: var(--soft); font-size: 13.5px; padding-bottom: 8px; font-variant-numeric: tabular-nums; }
+  .panel { background: var(--panel); border: 1px solid var(--grid); border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; }
+  canvas { display: block; width: 100%; }
+  #raster { height: 150px; image-rendering: pixelated; border: 1px solid var(--grid); border-radius: 6px 6px 0 0; background: var(--surface); }
+  #lostStrip { height: 9px; image-rendering: pixelated; border: 1px solid var(--grid); border-top: 0; border-radius: 0 0 6px 6px; background: var(--surface); }
+  .axis { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .counts { color: var(--soft); font-size: 13.5px; margin-top: 8px; font-variant-numeric: tabular-nums; }
+  .row { display: grid; grid-template-columns: 190px 1fr auto; gap: 14px; align-items: start; padding: 10px 0; border-top: 1px solid var(--grid); }
+  .row:first-of-type { border-top: 0; }
+  .who { font-size: 13.5px; color: var(--soft); padding-top: 3px; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 7px; vertical-align: -1px; }
+  #sentenceText { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; min-height: 27px; }
+  .chip { font: 12.5px/1 ui-monospace, "SF Mono", Menlo, monospace; padding: 6px 7px; border-radius: 6px;
+          border: 1px solid var(--grid); background: var(--surface); color: var(--ink); }
+  .chip.gap { border-color: transparent; background: none; color: var(--muted); padding: 6px 2px; }
+  .score { font-size: 13.5px; color: var(--soft); white-space: nowrap; padding-top: 4px; font-variant-numeric: tabular-nums; }
+  .legend { display: flex; gap: 18px; font-size: 13px; color: var(--soft); margin-bottom: 6px; }
+  .legend .line { display: inline-block; width: 16px; border-top: 2px solid var(--soft); margin-right: 7px; vertical-align: 4px; }
+  .chartWrap { position: relative; }
+  #chart { height: 200px; }
+  #tip { position: absolute; display: none; pointer-events: none; background: var(--ink); color: #fff; font-size: 12.5px;
+         padding: 6px 9px; border-radius: 6px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-top: 14px; }
+  .tile { border: 1px solid var(--grid); border-radius: 10px; padding: 12px 14px; }
+  .tile .name { font-size: 13.5px; color: var(--soft); margin-bottom: 8px; }
+  .nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .num b { display: block; font-size: 21px; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .num span { font-size: 12px; color: var(--muted); }
+  footer { color: var(--muted); font-size: 12.5px; margin-top: 18px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Decoding speech from brain recordings, one step at a time</h1>
+  <p class="sub">A replay of public UC Davis recordings at real speed on this computer. Not live from a person, and not an embedded system.</p>
+
+  <div class="controls">
+    <label>Sentence <select id="sentence"></select></label>
+    <label>Frames lost
+      <select id="loss">
+        <option value="0">none</option><option value="0.01">1%</option><option value="0.05">5%</option>
+        <option value="0.1">10%</option><option value="0.2">20%</option>
+      </select>
+    </label>
+    <label>Lost
+      <select id="burst"><option value="1">one at a time</option><option value="10">in runs of 10 (200 ms holes)</option></select>
+    </label>
+    <label>The receiver
+      <select id="fill">
+        <option value="ignore">ignores the gap</option><option value="zeros">fills it with zeros</option>
+        <option value="hold">repeats the last row</option>
+      </select>
+    </label>
+    <button id="play">Play</button>
+    <span id="status">Pick a sentence and press Play.</span>
+  </div>
+
+  <section class="panel">
+    <h2>1. What arrives</h2>
+    <p class="note">Each column is one 20 ms frame: activity on 256 electrodes, darker means more. The strip underneath marks frames that never arrived.</p>
+    <canvas id="raster" width="600" height="256"></canvas>
+    <canvas id="lostStrip" width="600" height="1"></canvas>
+    <div class="axis"><span>0 s</span><span id="rasterEnd"></span></div>
+    <div class="counts" id="frameCounts">&nbsp;</div>
+  </section>
+
+  <section class="panel">
+    <h2>2. What each decoder makes of it</h2>
+    <p class="note">Phonemes are the sounds words are made of. | marks the gap between words. Each decoder adds a phoneme the moment it hears one.</p>
+    <div class="row">
+      <div class="who">He was trying to say</div>
+      <div><div id="sentenceText">&nbsp;</div><div class="chips" id="truth"></div></div>
+      <div></div>
+    </div>
+    <div id="guesses"></div>
+  </section>
+
+  <section class="panel">
+    <h2>3. Is every step on time?</h2>
+    <p class="note">One dot per decoding step, at the moment it ran. Each decoder owes a step every 80 ms, so every dot has to stay under the line.</p>
+    <div class="legend" id="legend"></div>
+    <div class="chartWrap"><canvas id="chart"></canvas><div id="tip"></div></div>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <footer>Data: Card et al. 2024, UC Davis (Dryad doi:10.5061/dryad.dncjsxm85), one participant, validation sentences.
+    Step times are measured on this computer's CPU while the replay runs.</footer>
+</main>
+
+<script>
+const COLOURS = { "cnn": "#2a78d6", "their-gru": "#eb6834" };
+const SHORT = { "cnn": "This CNN", "their-gru": "UC Davis GRU" };
+const BIN_S = 0.02;
+const $ = id => document.getElementById(id);
+let source = null;   // the open event stream, if a replay is running
+let run = null;      // everything known about the replay on screen
+let hoverT = null;   // time under the mouse on the chart, in seconds
+let drawQueued = false;
+
+async function init() {
+  const sentences = await (await fetch("/sentences")).json();
+  for (const s of sentences) {
+    const option = document.createElement("option");
+    option.value = s.id;
+    option.textContent = `${s.text}  (${s.seconds} s)`;
+    $("sentence").appendChild(option);
+  }
+  $("play").addEventListener("click", play);
+  $("chart").addEventListener("mousemove", onHover);
+  $("chart").addEventListener("mouseleave", () => { hoverT = null; $("tip").style.display = "none"; queueDraw(); });
+  window.addEventListener("resize", queueDraw);
+  drawChart();
+}
+
+function play() {
+  if (source) source.close();
+  const query = new URLSearchParams({ id: $("sentence").value, loss: $("loss").value, burst: $("burst").value,
+                                      fill: $("fill").value, seed: 0 });
+  source = new EventSource("/stream?" + query);
+  source.addEventListener("start", e => onStart(JSON.parse(e.data)));
+  source.addEventListener("row", e => onRow(JSON.parse(e.data)));
+  source.addEventListener("step", e => onStep(JSON.parse(e.data)));
+  source.addEventListener("end", e => { source.close(); source = null; onEnd(JSON.parse(e.data)); });
+  source.onerror = () => { if (source) { source.close(); source = null; $("status").textContent = "Lost the connection to demo.py."; } };
+  $("status").textContent = "Starting...";
+}
+
+function chip(text) {
+  const el = document.createElement("span");
+  el.className = text === "|" ? "chip gap" : "chip";
+  el.textContent = text;
+  return el;
+}
+
+function onStart(d) {
+  run = { rows: d.rows, seconds: d.seconds, models: d.models, steps: {}, lost: 0, arrived: 0 };
+  for (const canvas of [$("raster"), $("lostStrip")]) {
+    canvas.width = d.rows;   // one pixel column per 20 ms frame
+    canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+  }
+  $("rasterEnd").textContent = d.seconds.toFixed(1) + " s";
+  $("sentenceText").textContent = d.sentence;
+  $("truth").replaceChildren(...d.truth.map(chip));
+  $("guesses").replaceChildren();
+  $("legend").replaceChildren();
+  $("tiles").replaceChildren();
+  for (const m of d.models) {
+    run.steps[m.name] = [];
+    const dot = `<span class="dot" style="background:${COLOURS[m.name]}"></span>`;
+    $("guesses").insertAdjacentHTML("beforeend",
+      `<div class="row"><div class="who">${dot}${m.label}</div><div class="chips" id="chips-${m.name}"></div>` +
+      `<div class="score" id="score-${m.name}"></div></div>`);
+    $("legend").insertAdjacentHTML("beforeend", `<span>${dot}${m.label}</span>`);
+    $("tiles").insertAdjacentHTML("beforeend",
+      `<div class="tile"><div class="name">${dot}${m.label}: sees ${m.window * 20} ms, steps every ${m.budget_ms} ms</div>` +
+      `<div class="nums"><div class="num"><b id="typical-${m.name}">-</b><span>typical step</span></div>` +
+      `<div class="num"><b id="worst-${m.name}">-</b><span>worst step</span></div>` +
+      `<div class="num"><b id="late-${m.name}">-</b><span>steps late</span></div></div></div>`);
+  }
+  $("legend").insertAdjacentHTML("beforeend", `<span><span class="line"></span>deadline: 80 ms</span>`);
+  $("frameCounts").innerHTML = "&nbsp;";
+  queueDraw();
+}
+
+function onRow(d) {
+  if (!run) return;
+  if (d.lost) {
+    run.lost += 1;
+    const ctx = $("lostStrip").getContext("2d");
+    ctx.fillStyle = "#0b0b0b";
+    ctx.fillRect(d.i, 0, 1, 1);
+  } else {
+    run.arrived += 1;
+    const ctx = $("raster").getContext("2d");
+    const column = ctx.createImageData(1, 256);
+    for (let k = 0; k < 256; k++) {   // light for quiet electrodes, dark for busy ones
+      const t = d.values[k] / 255;
+      column.data[4 * k] = 252 - t * 232;
+      column.data[4 * k + 1] = 252 - t * 224;
+      column.data[4 * k + 2] = 251 - t * 211;
+      column.data[4 * k + 3] = 255;
+    }
+    ctx.putImageData(column, d.i, 0);
+  }
+  $("frameCounts").textContent = `${run.arrived + run.lost} frames sent, ${run.lost} lost`;
+  $("status").textContent = `Playing: ${((d.i + 1) * BIN_S).toFixed(1)} s of ${run.seconds.toFixed(1)} s`;
+}
+
+function median(values) {
+  const sorted = [...values].sort((a, b) => a - b), mid = sorted.length >> 1;
+  return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+}
+
+function onStep(d) {
+  if (!run) return;
+  const steps = run.steps[d.model];
+  steps.push({ t: d.i * BIN_S, ms: d.ms });
+  if (d.phoneme) $("chips-" + d.model).appendChild(chip(d.phoneme));
+  const times = steps.map(s => s.ms);
+  const budget = run.models.find(m => m.name === d.model).budget_ms;
+  $("typical-" + d.model).textContent = median(times).toFixed(1) + " ms";
+  $("worst-" + d.model).textContent = Math.max(...times).toFixed(1) + " ms";
+  $("late-" + d.model).textContent = `${times.filter(ms => ms > budget).length} of ${times.length}`;
+  queueDraw();
+}
+
+function onEnd(d) {
+  if (!run) return;
+  for (const [name, r] of Object.entries(d.results)) {
+    $("score-" + name).textContent = `${r.wrong} of ${r.of} phonemes wrong`;
+  }
+  $("frameCounts").textContent = `${run.rows} frames sent, ${d.lost} lost, ${d.noticed} noticed missing by the receiver`;
+  $("status").textContent = "Done.";
+  queueDraw();
+}
+
+function queueDraw() {
+  if (drawQueued) return;
+  drawQueued = true;
+  requestAnimationFrame(() => { drawQueued = false; drawChart(); });
+}
+
+const MARGIN = { left: 50, right: 168, top: 12, bottom: 26 };
+
+function chartScales() {
+  const canvas = $("chart"), W = canvas.clientWidth, H = canvas.clientHeight;
+  const seconds = run ? run.seconds : 10;
+  let top = 90;   // ms at the top of the chart; grows if a step ever goes past it
+  if (run) for (const steps of Object.values(run.steps)) for (const s of steps) top = Math.max(top, s.ms * 1.1);
+  return {
+    W, H, seconds, top,
+    x: t => MARGIN.left + t / seconds * (W - MARGIN.left - MARGIN.right),
+    y: ms => H - MARGIN.bottom - ms / top * (H - MARGIN.top - MARGIN.bottom),
+  };
+}
+
+function drawChart() {
+  const canvas = $("chart"), ratio = window.devicePixelRatio || 1;
+  const { W, H, seconds, top, x, y } = chartScales();
+  canvas.width = W * ratio;
+  canvas.height = H * ratio;
+  const ctx = canvas.getContext("2d");
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  ctx.font = "12px system-ui, sans-serif";
+  ctx.textBaseline = "middle";
+
+  const tick = top > 200 ? 100 : top > 100 ? 40 : 20;
+  for (let ms = 0; ms <= top; ms += tick) {   // horizontal grid and the ms labels
+    ctx.strokeStyle = "#e6e5e0"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(MARGIN.left, y(ms)); ctx.lineTo(W - MARGIN.right, y(ms)); ctx.stroke();
+    ctx.fillStyle = "#8a8884"; ctx.textAlign = "right";
+    ctx.fillText(ms + " ms", MARGIN.left - 8, y(ms));
+  }
+  const everyS = seconds > 30 ? 10 : seconds > 12 ? 5 : 2;
+  ctx.textAlign = "center";
+  for (let t = 0; t <= seconds; t += everyS) ctx.fillText(t + " s", x(t), H - 9);
+
+  ctx.strokeStyle = "#52514e"; ctx.lineWidth = 1.5;   // the deadline
+  ctx.beginPath(); ctx.moveTo(MARGIN.left, y(80)); ctx.lineTo(W - MARGIN.right, y(80)); ctx.stroke();
+  ctx.fillStyle = "#52514e"; ctx.textAlign = "left";
+  ctx.fillText("deadline: 80 ms", W - MARGIN.right + 10, y(80));
+
+  if (!run) return;
+  if (hoverT !== null) {
+    ctx.strokeStyle = "#cfcdc6"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x(hoverT), MARGIN.top); ctx.lineTo(x(hoverT), H - MARGIN.bottom); ctx.stroke();
+  }
+  const ends = [];
+  for (const m of run.models) {
+    const steps = run.steps[m.name];
+    for (const s of steps) {   // each dot gets a thin ring in the background colour so neighbours stay separate
+      ctx.beginPath(); ctx.arc(x(s.t), y(s.ms), 3.2, 0, 2 * Math.PI);
+      ctx.fillStyle = COLOURS[m.name]; ctx.fill();
+      ctx.strokeStyle = "#ffffff"; ctx.lineWidth = 1; ctx.stroke();
+    }
+    if (steps.length) ends.push({ name: m.name, ms: steps[steps.length - 1].ms, at: y(steps[steps.length - 1].ms) });
+  }
+  ends.sort((a, b) => b.at - a.at);   // label the latest step of each decoder on the right, lowest first
+  let previous = Infinity;
+  for (const end of ends) {
+    const at = Math.min(end.at, previous - 16);
+    previous = at;
+    ctx.beginPath(); ctx.arc(W - MARGIN.right + 14, at, 4, 0, 2 * Math.PI);
+    ctx.fillStyle = COLOURS[end.name]; ctx.fill();
+    ctx.fillStyle = "#52514e"; ctx.textAlign = "left";
+    ctx.fillText(`${SHORT[end.name]}  ${end.ms.toFixed(1)} ms`, W - MARGIN.right + 24, at);
+  }
+}
+
+function onHover(event) {
+  if (!run) return;
+  const { W, seconds } = chartScales();
+  const box = $("chart").getBoundingClientRect();
+  const t = (event.clientX - box.left - MARGIN.left) / (W - MARGIN.left - MARGIN.right) * seconds;
+  const lines = [];
+  let snapped = null;
+  for (const m of run.models) {
+    let best = null;
+    for (const s of run.steps[m.name]) if (!best || Math.abs(s.t - t) < Math.abs(best.t - t)) best = s;
+    if (best && Math.abs(best.t - t) < 0.25) {
+      snapped = snapped === null ? best.t : snapped;
+      lines.push(`<span class="dot" style="background:${COLOURS[m.name]}"></span>${SHORT[m.name]}: ${best.ms.toFixed(2)} ms`);
+    }
+  }
+  const tip = $("tip");
+  if (!lines.length) { hoverT = null; tip.style.display = "none"; queueDraw(); return; }
+  hoverT = snapped;
+  tip.innerHTML = `at ${snapped.toFixed(2)} s<br>` + lines.join("<br>");
+  tip.style.display = "block";
+  tip.style.left = Math.min(event.clientX - box.left + 14, W - 190) + "px";
+  tip.style.top = "8px";
+  queueDraw();
+}
+
+init();
+</script>
+</body>
+</html>
