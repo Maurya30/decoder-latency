@@ -58,18 +58,21 @@ class SmallCNN(nn.Module):
       conv1   512 -> 256 channels, kernel 7, stride 2, then ReLU
       conv2   256 -> 256 channels, kernel 7, stride 2, then ReLU
       head    256 -> 41 channels, kernel 1 (one score per phoneme class)
+
+    `width` is the 256 above. Smaller widths give the smaller models in sizes.py.
     """
 
     # How the model runs live. Both numbers follow from the kernels and strides below.
     window = 19   # input rows one output step can see: 7 + (7 - 1) * 2 = 19 rows = 380 ms
     hop = 4       # new rows between one output step and the next: stride 2 * stride 2 = 4 rows = 80 ms
 
-    def __init__(self):
+    def __init__(self, width=256):
         super().__init__()
+        self.width = width
         # The three layers, each an nn.Conv1d.
-        self.conv1 = nn.Conv1d(N_FEATURES, 256, kernel_size=7, stride=2)
-        self.conv2 = nn.Conv1d(256, 256, kernel_size=7, stride=2)
-        self.head = nn.Conv1d(256, N_CLASSES, kernel_size=1)
+        self.conv1 = nn.Conv1d(N_FEATURES, width, kernel_size=7, stride=2)
+        self.conv2 = nn.Conv1d(width, width, kernel_size=7, stride=2)
+        self.head = nn.Conv1d(width, N_CLASSES, kernel_size=1)
 
     def forward(self, x):
         x = x.transpose(1, 2)       # Conv1d wants [batch, features, time]
@@ -110,6 +113,7 @@ def save_model(model, name, path, **info):
 def load_model(path, device="cpu"):
     """Load a model saved by train.py. Returns (model, info) with the model in eval mode."""
     info = torch.load(path, map_location="cpu", weights_only=True)
-    model = MODELS[info["model"]]()
+    sized = {"width": info["width"]} if "width" in info else {}   # only the narrower CNNs record a width
+    model = MODELS[info["model"]](**sized)
     model.load_state_dict(info.pop("state"))
     return model.to(device).eval(), info
