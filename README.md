@@ -3,6 +3,8 @@
 A small speech decoder trained on real brain recordings, run as a live stream and timed
 one step at a time, next to the published UC Davis decoder on the same sentences.
 
+![The demo: one sentence decoded live, then again with 20% of the frames lost](runs/demo.gif)
+
 The recordings are public: 256 electrodes in the speech motor cortex of one man with
 ALS, while he tried to say sentences shown on a screen (Card et al. 2024). A decoder
 turns those recordings into phonemes, the sounds that words are made of.
@@ -242,10 +244,3 @@ between 49.3% and 52.7% and the GRU between 15.6% and 16.8%
 | `charts.py` | the charts |
 | `demo.py`, `demo.html` | a local page that shows both decoders running live |
 | `check.py` | checks the seven key pieces behave |
-
-## Who wrote what
-
-Built with Claude (AI). I wrote the CNN's layers, its forward pass and its
-output-length function by hand. Claude wrote the rest: the data loading, the training
-loop, the live loop and its timing, the frames and receiver, the rebuild of the UC
-Davis model, the charts, and the demo page.
