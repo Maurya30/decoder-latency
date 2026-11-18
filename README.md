@@ -1,4 +1,4 @@
-# decoder-latency
+# speech-bci-decoder
 
 A small speech decoder trained on real brain recordings, run as a live stream and timed
 one step at a time, next to the published UC Davis decoder on the same sentences.
@@ -50,11 +50,11 @@ chip, so there is no microcontroller timing yet.
 ## Set it up
 
 ```bash
-git clone https://github.com/Maurya30/decoder-latency.git
+git clone https://github.com/Maurya30/speech-bci-decoder.git
 ```
 
 ```bash
-cd decoder-latency
+cd speech-bci-decoder
 ```
 
 ```bash
