@@ -47,19 +47,6 @@ chip, so there is no microcontroller timing yet.
   versions of it (`sizes.py`), and the same decoder in Rust, built for an ARM Cortex-M
   (`decoder-rs/`).
 
-## What it is not
-
-- Not any company's data, format or code. Everything here is public UC Davis data.
-- Not running on embedded hardware. The models and every timing are on a Mac, replaying
-  recordings. The Rust decoder is built for a microcontroller but has only ever run on
-  the Mac and in an emulator. There is no implant, no radio link and no real-time
-  operating system.
-- Not a full speech system. It stops at phonemes: no language model, no words.
-- One participant. Nothing here says how it would do on anyone else.
-- The numbers are on the validation split. The test split has no public labels.
-- I did not train the UC Davis model. Its weights are theirs. What is mine is the code
-  that runs it, and that code is checked against their own training log (see Results).
-
 ## Set it up
 
 ```bash
