@@ -1,0 +1,14 @@
+[package]
+name = "decoder"
+version = "0.1.0"
+edition = "2021"
+description = "The 8-bit CNN speech decoder as a no_std, no-heap forward pass"
+publish = false
+
+# src/lib.rs is the decoder: no_std, no heap, no unsafe, no dependencies.
+# src/bin/host.rs is the laptop test bench around it (it uses std; the decoder does not).
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
