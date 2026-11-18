@@ -1,0 +1,151 @@
+{
+  "measured": "2026-11-18",
+  "recipe": "--model cnn --days 8 --epochs 12 --noise 0.5",
+  "widths": {
+    "256": {
+      "parameters": 1387305,
+      "float_bytes": 5549220,
+      "int8_bytes": 1391044,
+      "sentences": 267,
+      "ram_bytes": null,
+      "multiply_adds_kept": 2304256,
+      "multiply_adds_redone": 6891776,
+      "runs": [
+        {
+          "seed": 0,
+          "float_per": 0.49834310476676014,
+          "int8_per": 0.4987254652052001,
+          "same_best_phoneme": 0.9957238575622976
+        },
+        {
+          "seed": 1,
+          "float_per": 0.5047157787407596,
+          "int8_per": 0.5045883252612796,
+          "same_best_phoneme": 0.9957238575622976
+        },
+        {
+          "seed": 2,
+          "float_per": 0.5034412439459597,
+          "int8_per": 0.5033137904664797,
+          "same_best_phoneme": 0.9948656177068433
+        }
+      ]
+    },
+    "128": {
+      "parameters": 578985,
+      "float_bytes": 2315940,
+      "int8_bytes": 580932,
+      "sentences": 267,
+      "ram_bytes": null,
+      "multiply_adds_kept": 1037440,
+      "multiply_adds_redone": 3331200,
+      "runs": [
+        {
+          "seed": 0,
+          "float_per": 0.5698445067550344,
+          "int8_per": 0.5699719602345144,
+          "same_best_phoneme": 0.9967928931717233
+        },
+        {
+          "seed": 1,
+          "float_per": 0.5540402752995157,
+          "int8_per": 0.5549324496558756,
+          "same_best_phoneme": 0.995618459685312
+        },
+        {
+          "seed": 2,
+          "float_per": 0.5600305888350752,
+          "int8_per": 0.5593933214376753,
+          "same_best_phoneme": 0.9966272679364602
+        }
+      ]
+    },
+    "64": {
+      "parameters": 260841,
+      "float_bytes": 1043364,
+      "int8_bytes": 261892,
+      "sentences": 267,
+      "ram_bytes": null,
+      "multiply_adds_kept": 490048,
+      "multiply_adds_redone": 1636928,
+      "runs": [
+        {
+          "seed": 0,
+          "float_per": 0.7062197297986235,
+          "int8_per": 0.7072393576344634,
+          "same_best_phoneme": 0.9976963035458857
+        },
+        {
+          "seed": 1,
+          "float_per": 0.6287280142747897,
+          "int8_per": 0.6292378281927097,
+          "same_best_phoneme": 0.9968982910487089
+        },
+        {
+          "seed": 2,
+          "float_per": 0.650012745347948,
+          "int8_per": 0.6475911292378282,
+          "same_best_phoneme": 0.9945042535571783
+        }
+      ]
+    },
+    "32": {
+      "parameters": 123273,
+      "float_bytes": 493092,
+      "int8_bytes": 123876,
+      "sentences": 267,
+      "ram_bytes": null,
+      "multiply_adds_kept": 237856,
+      "multiply_adds_redone": 811296,
+      "runs": [
+        {
+          "seed": 0,
+          "float_per": 0.7076217180729034,
+          "int8_per": 0.7068569971960235,
+          "same_best_phoneme": 0.9978167582624408
+        },
+        {
+          "seed": 1,
+          "float_per": 0.6581697680346673,
+          "int8_per": 0.6586795819525874,
+          "same_best_phoneme": 0.9970036889256945
+        },
+        {
+          "seed": 2,
+          "float_per": 0.8345653836349732,
+          "int8_per": 0.8355850114708131,
+          "same_best_phoneme": 0.9978769856207182
+        }
+      ]
+    },
+    "16": {
+      "parameters": 59865,
+      "float_bytes": 239460,
+      "int8_bytes": 60244,
+      "sentences": 267,
+      "ram_bytes": null,
+      "multiply_adds_kept": 117136,
+      "multiply_adds_redone": 403856,
+      "runs": [
+        {
+          "seed": 0,
+          "float_per": 0.8401733367320928,
+          "int8_per": 0.8408106041294927,
+          "same_best_phoneme": 0.9990514191071295
+        },
+        {
+          "seed": 1,
+          "float_per": 0.9185572266122866,
+          "int8_per": 0.9146061687484068,
+          "same_best_phoneme": 0.9991267033049763
+        },
+        {
+          "seed": 2,
+          "float_per": 0.7727504460871781,
+          "int8_per": 0.7723680856487382,
+          "same_best_phoneme": 0.9987051117970338
+        }
+      ]
+    }
+  }
+}

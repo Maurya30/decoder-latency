@@ -104,18 +104,28 @@ def measure(widths, seeds):
 
 
 def spread(runs, key):
-    """(mean, lowest, highest) of one error rate over the seeds, in percent."""
-    values = [100 * run[key] for run in runs]
-    return sum(values) / len(values), min(values), max(values)
+    """(middle, lowest, highest) of one error rate over the training runs, in percent.
+
+    The middle run, not the mean: with three runs, one unlucky one would drag a mean a long way.
+    """
+    values = sorted(100 * run[key] for run in runs)
+    return values[len(values) // 2], values[0], values[-1]
 
 
 def show(table):
     print(f"\n{'width':>5}{'parameters':>12}{'8-bit file':>13}{'RAM in use':>12}{'mult-adds/step':>16}"
-          f"{'float, mean (range)':>24}{'8-bit, mean (range)':>24}")
+          f"{'float, middle (range)':>24}{'8-bit, middle (range)':>24}")
     for width, row in table.items():
         cells = ["{:.1f}% ({:.1f} to {:.1f})".format(*spread(row["runs"], key)) for key in ("float_per", "int8_per")]
         print(f"{width:>5}{row['parameters']:>12,}{row['int8_bytes']:>11,} B{row['ram_bytes']:>10,} B{row['multiply_adds_kept']:>16,}"
               f"{cells[0]:>24}{cells[1]:>24}")
+
+
+def their_gru():
+    """The UC Davis GRU's error rate on the same sentences, if evaluate.py has measured it: a line on the chart."""
+    measured = RUNS / "accuracy.json"
+    per = json.loads(measured.read_text())["overall"].get("their-gru") if measured.exists() else None
+    return ("UC Davis GRU, their weights, not made smaller here", per) if per else None
 
 
 def main():
@@ -131,7 +141,7 @@ def main():
     show(table)
     RESULTS.write_text(json.dumps({"measured": datetime.date.today().isoformat(), "recipe": " ".join(RECIPE),
                                    "widths": table}, indent=2))
-    charts.size_chart(table, RUNS / "sizes.png")
+    charts.size_chart(table, RUNS / "sizes.png", their_gru())
     print(f"\nsaved {shown(RESULTS)} and {shown(RUNS / 'sizes.png')}")
 
 

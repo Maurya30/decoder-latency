@@ -1,0 +1,166 @@
+{
+  "measured": "2026-11-18",
+  "recipe": "--model cnn --days 8 --noise 0.5 --holdout 0.1 --patience 30 --epochs 100",
+  "widths": {
+    "256": {
+      "parameters": 1387305,
+      "float_bytes": 5549220,
+      "int8_bytes": 1391044,
+      "sentences": 267,
+      "ram_bytes": 5800,
+      "multiply_adds_kept": 2304256,
+      "multiply_adds_redone": 6891776,
+      "runs": [
+        {
+          "seed": 0,
+          "epochs": 12,
+          "float_per": 0.5101962783583992,
+          "int8_per": 0.5105786387968392,
+          "same_best_phoneme": 0.9949559587442596
+        },
+        {
+          "seed": 1,
+          "epochs": 14,
+          "float_per": 0.5209023706347183,
+          "int8_per": 0.5216670915115983,
+          "same_best_phoneme": 0.9956034028457427
+        },
+        {
+          "seed": 2,
+          "epochs": 13,
+          "float_per": 0.5252357889370379,
+          "int8_per": 0.5280397654855977,
+          "same_best_phoneme": 0.9957840849205751
+        }
+      ]
+    },
+    "128": {
+      "parameters": 578985,
+      "float_bytes": 2315940,
+      "int8_bytes": 580932,
+      "sentences": 267,
+      "ram_bytes": 4776,
+      "multiply_adds_kept": 1037440,
+      "multiply_adds_redone": 3331200,
+      "runs": [
+        {
+          "seed": 0,
+          "epochs": 17,
+          "float_per": 0.5316084629110375,
+          "int8_per": 0.5332653581442773,
+          "same_best_phoneme": 0.995332379733494
+        },
+        {
+          "seed": 1,
+          "epochs": 19,
+          "float_per": 0.5438439969411165,
+          "int8_per": 0.5460107060922763,
+          "same_best_phoneme": 0.9935105021455997
+        },
+        {
+          "seed": 2,
+          "epochs": 24,
+          "float_per": 0.5491970430792761,
+          "int8_per": 0.549451950038236,
+          "same_best_phoneme": 0.9943085146427765
+        }
+      ]
+    },
+    "64": {
+      "parameters": 260841,
+      "float_bytes": 1043364,
+      "int8_bytes": 261892,
+      "sentences": 267,
+      "ram_bytes": 4264,
+      "multiply_adds_kept": 490048,
+      "multiply_adds_redone": 1636928,
+      "runs": [
+        {
+          "seed": 0,
+          "epochs": 15,
+          "float_per": 0.7170532755544227,
+          "int8_per": 0.7169258220749426,
+          "same_best_phoneme": 0.9969284047278476
+        },
+        {
+          "seed": 1,
+          "epochs": 21,
+          "float_per": 0.5717563089472343,
+          "int8_per": 0.5713739485087943,
+          "same_best_phoneme": 0.9955582323270346
+        },
+        {
+          "seed": 2,
+          "epochs": 28,
+          "float_per": 0.5703543206729543,
+          "int8_per": 0.5717563089472343,
+          "same_best_phoneme": 0.992155386584356
+        }
+      ]
+    },
+    "32": {
+      "parameters": 123273,
+      "float_bytes": 493092,
+      "int8_bytes": 123876,
+      "sentences": 267,
+      "ram_bytes": 4008,
+      "multiply_adds_kept": 237856,
+      "multiply_adds_redone": 811296,
+      "runs": [
+        {
+          "seed": 0,
+          "epochs": 39,
+          "float_per": 0.6066785623247515,
+          "int8_per": 0.6093550853938312,
+          "same_best_phoneme": 0.9951065271399533
+        },
+        {
+          "seed": 1,
+          "epochs": 18,
+          "float_per": 0.6308947234259495,
+          "int8_per": 0.6300025490695896,
+          "same_best_phoneme": 0.9965369268990439
+        },
+        {
+          "seed": 2,
+          "epochs": 64,
+          "float_per": 0.7661228651542187,
+          "int8_per": 0.7647208768799388,
+          "same_best_phoneme": 0.9939471504931114
+        }
+      ]
+    },
+    "16": {
+      "parameters": 59865,
+      "float_bytes": 239460,
+      "int8_bytes": 60244,
+      "sentences": 267,
+      "ram_bytes": 3880,
+      "multiply_adds_kept": 117136,
+      "multiply_adds_redone": 403856,
+      "runs": [
+        {
+          "seed": 0,
+          "epochs": 46,
+          "float_per": 0.650522559265868,
+          "int8_per": 0.6525618149375478,
+          "same_best_phoneme": 0.9930889106376571
+        },
+        {
+          "seed": 1,
+          "epochs": 70,
+          "float_per": 0.6570226867193475,
+          "int8_per": 0.6556206984450675,
+          "same_best_phoneme": 0.994127832567944
+        },
+        {
+          "seed": 2,
+          "epochs": 99,
+          "float_per": 0.6463165944430282,
+          "int8_per": 0.6436400713739485,
+          "same_best_phoneme": 0.9942633441240684
+        }
+      ]
+    }
+  }
+}

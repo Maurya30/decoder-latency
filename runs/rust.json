@@ -1,0 +1,245 @@
+{
+  "256": {
+    "measured": "2026-11-18",
+    "model": "runs/cnn_int8.bin",
+    "sentences": 267,
+    "steps": 66415,
+    "steps_that_differ": 0,
+    "rust_per": 0.4987254652052001,
+    "timing": {
+      "kept / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.029583,
+        "p99": 0.035333420000000004,
+        "worst": 0.042917
+      },
+      "redone / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.082542,
+        "p99": 0.09554184,
+        "worst": 0.121333
+      },
+      "pytorch float / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "threads": 4,
+        "over_budget": 0,
+        "typical": 0.1313330139964819,
+        "p99": 0.14296885346993804,
+        "worst": 1.1054170317947865
+      },
+      "kept / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.252583,
+        "p99": 0.36742930999999995,
+        "worst": 0.928875
+      },
+      "redone / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.7320625000000001,
+        "p99": 0.9630839199999999,
+        "worst": 1.146083
+      },
+      "pytorch float / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "threads": 4,
+        "over_budget": 0,
+        "typical": 1.552124973386526,
+        "p99": 2.343381093814968,
+        "worst": 3.2315838616341352
+      }
+    },
+    "state_bytes": 5800,
+    "model_bytes": 1391044,
+    "steps_that_differ_with_one_bit_flipped": 29
+  },
+  "128": {
+    "measured": "2026-11-18",
+    "model": "runs/sizes/cnn_w128_s0_int8.bin",
+    "sentences": 267,
+    "steps": 66415,
+    "steps_that_differ": 0,
+    "rust_per": 0.5332653581442773,
+    "timing": {
+      "kept / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.012791,
+        "p99": 0.016125010000000002,
+        "worst": 0.030333
+      },
+      "redone / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.03925,
+        "p99": 0.04646259,
+        "worst": 0.060792
+      },
+      "kept / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.12625,
+        "p99": 0.2145146699999996,
+        "worst": 0.369501
+      },
+      "redone / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.3675,
+        "p99": 0.5127625,
+        "worst": 1.035708
+      }
+    },
+    "state_bytes": 4776,
+    "model_bytes": 580932,
+    "steps_that_differ_with_one_bit_flipped": 20
+  },
+  "64": {
+    "measured": "2026-11-18",
+    "model": "runs/sizes/cnn_w64_s0_int8.bin",
+    "sentences": 267,
+    "steps": 66415,
+    "steps_that_differ": 0,
+    "rust_per": 0.7169258220749426,
+    "timing": {
+      "kept / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.006292,
+        "p99": 0.00795801,
+        "worst": 0.022333
+      },
+      "redone / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.019791,
+        "p99": 0.02316867,
+        "worst": 0.039667
+      },
+      "kept / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.0663755,
+        "p99": 0.14265608999999996,
+        "worst": 0.237292
+      },
+      "redone / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.1102705,
+        "p99": 0.24526332999999997,
+        "worst": 1.088041
+      }
+    },
+    "state_bytes": 4264,
+    "model_bytes": 261892,
+    "steps_that_differ_with_one_bit_flipped": 20
+  },
+  "32": {
+    "measured": "2026-11-18",
+    "model": "runs/sizes/cnn_w32_s0_int8.bin",
+    "sentences": 267,
+    "steps": 66415,
+    "steps_that_differ": 0,
+    "rust_per": 0.6093550853938312,
+    "timing": {
+      "kept / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.004167,
+        "p99": 0.0113764,
+        "worst": 0.091333
+      },
+      "redone / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.010833,
+        "p99": 0.01437541,
+        "worst": 0.020708
+      },
+      "kept / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.0456865,
+        "p99": 0.10996092,
+        "worst": 0.184042
+      },
+      "redone / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.103542,
+        "p99": 0.23645582999999834,
+        "worst": 0.616833
+      }
+    },
+    "state_bytes": 4008,
+    "model_bytes": 123876,
+    "steps_that_differ_with_one_bit_flipped": 24
+  },
+  "16": {
+    "measured": "2026-11-18",
+    "model": "runs/sizes/cnn_w16_s0_int8.bin",
+    "sentences": 267,
+    "steps": 66415,
+    "steps_that_differ": 0,
+    "rust_per": 0.6525618149375478,
+    "timing": {
+      "kept / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.001833,
+        "p99": 0.002708,
+        "worst": 0.009417
+      },
+      "redone / back to back": {
+        "steps": 2000,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.005083,
+        "p99": 0.007209,
+        "worst": 0.021708
+      },
+      "kept / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.027541,
+        "p99": 0.11128167999999979,
+        "worst": 2.439126
+      },
+      "redone / paced": {
+        "steps": 500,
+        "budget_ms": 80,
+        "over_budget": 0,
+        "typical": 0.0481665,
+        "p99": 0.12075667,
+        "worst": 0.199
+      }
+    },
+    "state_bytes": 3880,
+    "model_bytes": 60244,
+    "steps_that_differ_with_one_bit_flipped": 12
+  }
+}

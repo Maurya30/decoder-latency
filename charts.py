@@ -66,32 +66,38 @@ def latency_chart(results, path):
     plt.close(fig)
 
 
-def size_chart(table, path):
+def size_chart(table, path, reference=None):
     """Phoneme error rate against the size of the 8-bit model file, one point per width.
 
     table is sizes.py's {width: row}. Each width was trained several times; the dot is
-    the mean and the bar runs from the best run to the worst.
+    the middle run and the bar goes from the best run to the worst. reference is an
+    optional (label, error rate) drawn as a level line, for a model that is not in the table.
     """
     rows = sorted(table.items(), key=lambda item: item[1]["int8_bytes"])
     runs_each = len(rows[0][1]["runs"])
     fig, (ax,) = _new_chart("How small can the model get?",
-                            f"Phoneme error rate on the 267 validation sentences against the size of the model file. "
-                            f"Dot: mean of {runs_each} training runs. Bar: best to worst run.", (9.6, 4.8))
+                            f"Phoneme error rate on the 267 validation sentences against model file size. "
+                            f"Dot: the middle of {runs_each} training runs. Bar: best to worst.", (9.6, 4.8))
     for kind, colour, name, nudge in (("float_per", ORANGE, "32-bit floats (same model, 4x the bytes)", 0.97),
                                       ("int8_per", BLUE, "8-bit integers", 1.0)):
         x = [row["int8_bytes"] / 1000 * nudge for _, row in rows]
         runs = [[100 * run[kind] for run in row["runs"]] for _, row in rows]
-        means = [sum(r) / len(r) for r in runs]
+        middles = [sorted(r)[len(r) // 2] for r in runs]   # the middle run of each width
         for xi, r in zip(x, runs):
             ax.plot([xi, xi], [min(r), max(r)], color=colour, linewidth=2, alpha=0.35, solid_capstyle="round", zorder=1)
-        ax.plot(x, means, color=colour, linewidth=2, marker="o", markersize=6, markeredgecolor=SURFACE,
+        ax.plot(x, middles, color=colour, linewidth=2, marker="o", markersize=6, markeredgecolor=SURFACE,
                 markeredgewidth=1, label=name, zorder=3 if kind == "int8_per" else 2)
         if kind == "int8_per":
-            for xi, mean, (width, row) in zip(x, means, rows):
-                ax.annotate(f"width {width}\n{row['int8_bytes'] / 1000:,.0f} kB, {mean:.0f}%", (xi, mean), xytext=(7, 9),
+            for xi, middle, (width, row) in zip(x, middles, rows):
+                ax.annotate(f"width {width}\n{row['int8_bytes'] / 1000:,.0f} kB, {middle:.0f}%", (xi, middle), xytext=(7, 9),
                             textcoords="offset points", fontsize=8.5, color=INK_SOFT)
     ax.set_xscale("log")
     ax.set_xlim(rows[0][1]["int8_bytes"] / 1000 / 1.5, rows[-1][1]["int8_bytes"] / 1000 * 2.6)
+    if reference:
+        label, per = reference
+        ax.axhline(100 * per, color=INK_SOFT, linewidth=1.2, linestyle=(0, (4, 3)), zorder=1)
+        ax.annotate(f"{label}: {100 * per:.1f}%", (1, 100 * per), xycoords=("axes fraction", "data"), xytext=(-6, 5),
+                    textcoords="offset points", ha="right", fontsize=8.5, color=INK_SOFT)
     ax.set_ylim(0, 100)
     ax.xaxis.set_major_formatter(lambda v, _: f"{v:,.0f} kB")
     ax.yaxis.set_major_formatter(lambda v, _: f"{v:g}%")

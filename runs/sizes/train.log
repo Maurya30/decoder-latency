@@ -1,0 +1,1040 @@
+=== width 256, seed 0
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 1,387,305 parameters, on mps
+epoch 1: loss 5.018, phoneme error rate 100.0%, held back 100.0%, 4 s
+epoch 2: loss 3.319, phoneme error rate 100.0%, held back 100.0%, 3 s
+epoch 3: loss 3.172, phoneme error rate 97.3%, held back 97.9%, 3 s
+epoch 4: loss 2.977, phoneme error rate 82.1%, held back 83.3%, 3 s
+epoch 5: loss 2.576, phoneme error rate 75.8%, held back 75.9%, 3 s
+epoch 6: loss 2.180, phoneme error rate 68.0%, held back 67.7%, 3 s
+epoch 7: loss 1.858, phoneme error rate 61.2%, held back 61.5%, 3 s
+epoch 8: loss 1.582, phoneme error rate 56.3%, held back 57.1%, 3 s
+epoch 9: loss 1.339, phoneme error rate 53.2%, held back 53.9%, 3 s
+epoch 10: loss 1.107, phoneme error rate 52.1%, held back 52.8%, 3 s
+epoch 11: loss 0.879, phoneme error rate 51.0%, held back 52.0%, 3 s
+epoch 12: loss 0.676, phoneme error rate 51.0%, held back 51.2%, 3 s
+epoch 13: loss 0.515, phoneme error rate 50.7%, held back 51.7%, 3 s
+epoch 14: loss 0.388, phoneme error rate 51.1%, held back 52.1%, 3 s
+epoch 15: loss 0.300, phoneme error rate 51.3%, held back 51.9%, 3 s
+epoch 16: loss 0.236, phoneme error rate 52.1%, held back 53.2%, 3 s
+epoch 17: loss 0.193, phoneme error rate 51.6%, held back 52.3%, 3 s
+epoch 18: loss 0.156, phoneme error rate 52.2%, held back 53.3%, 3 s
+epoch 19: loss 0.138, phoneme error rate 51.4%, held back 51.5%, 3 s
+epoch 20: loss 0.117, phoneme error rate 51.4%, held back 52.4%, 3 s
+epoch 21: loss 0.102, phoneme error rate 52.1%, held back 52.3%, 3 s
+epoch 22: loss 0.085, phoneme error rate 51.1%, held back 52.2%, 3 s
+epoch 23: loss 0.076, phoneme error rate 50.9%, held back 52.1%, 3 s
+epoch 24: loss 0.068, phoneme error rate 51.6%, held back 51.9%, 3 s
+epoch 25: loss 0.064, phoneme error rate 52.7%, held back 52.8%, 3 s
+epoch 26: loss 0.058, phoneme error rate 52.2%, held back 53.3%, 3 s
+epoch 27: loss 0.057, phoneme error rate 52.3%, held back 52.8%, 3 s
+epoch 28: loss 0.054, phoneme error rate 51.1%, held back 51.9%, 3 s
+epoch 29: loss 0.044, phoneme error rate 51.2%, held back 52.0%, 3 s
+epoch 30: loss 0.041, phoneme error rate 51.5%, held back 51.8%, 3 s
+epoch 31: loss 0.040, phoneme error rate 51.2%, held back 52.0%, 3 s
+epoch 32: loss 0.037, phoneme error rate 51.6%, held back 51.5%, 3 s
+epoch 33: loss 0.035, phoneme error rate 51.5%, held back 51.2%, 3 s
+epoch 34: loss 0.034, phoneme error rate 51.2%, held back 52.3%, 3 s
+epoch 35: loss 0.034, phoneme error rate 51.3%, held back 52.5%, 3 s
+epoch 36: loss 0.037, phoneme error rate 52.1%, held back 52.7%, 3 s
+epoch 37: loss 0.036, phoneme error rate 52.0%, held back 52.2%, 3 s
+epoch 38: loss 0.040, phoneme error rate 51.7%, held back 52.3%, 3 s
+epoch 39: loss 0.043, phoneme error rate 52.1%, held back 53.0%, 3 s
+epoch 40: loss 0.039, phoneme error rate 52.4%, held back 52.8%, 3 s
+epoch 41: loss 0.050, phoneme error rate 52.7%, held back 53.4%, 4 s
+epoch 42: loss 0.051, phoneme error rate 52.3%, held back 53.4%, 3 s
+kept epoch 12: the best on the 98 held-back training sentences (51.2%). Its validation error rate is 51.0%
+saved runs/sizes/cnn_w256_s0.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: IY T | T N D | | AH V | F AH N IY |
+=== width 256, seed 1
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 1,387,305 parameters, on mps
+epoch 1: loss 5.597, phoneme error rate 100.0%, held back 100.0%, 4 s
+epoch 2: loss 3.378, phoneme error rate 100.0%, held back 100.0%, 3 s
+epoch 3: loss 3.213, phoneme error rate 99.8%, held back 99.7%, 3 s
+epoch 4: loss 3.068, phoneme error rate 93.5%, held back 94.2%, 3 s
+epoch 5: loss 2.717, phoneme error rate 76.7%, held back 77.3%, 3 s
+epoch 6: loss 2.287, phoneme error rate 71.1%, held back 71.1%, 3 s
+epoch 7: loss 1.950, phoneme error rate 64.1%, held back 63.7%, 3 s
+epoch 8: loss 1.666, phoneme error rate 58.8%, held back 59.9%, 3 s
+epoch 9: loss 1.426, phoneme error rate 57.2%, held back 58.6%, 3 s
+epoch 10: loss 1.215, phoneme error rate 54.6%, held back 56.6%, 3 s
+epoch 11: loss 0.988, phoneme error rate 52.8%, held back 54.6%, 4 s
+epoch 12: loss 0.776, phoneme error rate 51.6%, held back 52.9%, 3 s
+epoch 13: loss 0.614, phoneme error rate 52.3%, held back 52.8%, 4 s
+epoch 14: loss 0.477, phoneme error rate 52.1%, held back 51.9%, 4 s
+epoch 15: loss 0.373, phoneme error rate 52.5%, held back 54.3%, 3 s
+epoch 16: loss 0.287, phoneme error rate 52.6%, held back 53.3%, 3 s
+epoch 17: loss 0.231, phoneme error rate 52.1%, held back 54.0%, 3 s
+epoch 18: loss 0.194, phoneme error rate 52.2%, held back 52.9%, 4 s
+epoch 19: loss 0.158, phoneme error rate 51.9%, held back 53.3%, 4 s
+epoch 20: loss 0.130, phoneme error rate 52.1%, held back 53.3%, 3 s
+epoch 21: loss 0.115, phoneme error rate 52.6%, held back 53.0%, 3 s
+epoch 22: loss 0.101, phoneme error rate 52.4%, held back 53.5%, 4 s
+epoch 23: loss 0.098, phoneme error rate 52.7%, held back 53.8%, 3 s
+epoch 24: loss 0.085, phoneme error rate 52.9%, held back 53.6%, 4 s
+epoch 25: loss 0.077, phoneme error rate 53.3%, held back 53.3%, 4 s
+epoch 26: loss 0.064, phoneme error rate 52.7%, held back 53.7%, 4 s
+epoch 27: loss 0.058, phoneme error rate 52.7%, held back 53.6%, 3 s
+epoch 28: loss 0.062, phoneme error rate 52.6%, held back 53.5%, 3 s
+epoch 29: loss 0.061, phoneme error rate 52.4%, held back 52.5%, 3 s
+epoch 30: loss 0.056, phoneme error rate 53.0%, held back 54.4%, 3 s
+epoch 31: loss 0.053, phoneme error rate 52.2%, held back 53.4%, 3 s
+epoch 32: loss 0.047, phoneme error rate 52.5%, held back 52.9%, 3 s
+epoch 33: loss 0.043, phoneme error rate 52.5%, held back 53.8%, 3 s
+epoch 34: loss 0.040, phoneme error rate 52.6%, held back 53.3%, 3 s
+epoch 35: loss 0.040, phoneme error rate 53.3%, held back 53.5%, 3 s
+epoch 36: loss 0.039, phoneme error rate 52.6%, held back 54.6%, 4 s
+epoch 37: loss 0.043, phoneme error rate 53.2%, held back 54.0%, 4 s
+epoch 38: loss 0.046, phoneme error rate 53.5%, held back 54.1%, 3 s
+epoch 39: loss 0.044, phoneme error rate 53.3%, held back 53.8%, 3 s
+epoch 40: loss 0.051, phoneme error rate 53.0%, held back 54.9%, 3 s
+epoch 41: loss 0.047, phoneme error rate 53.3%, held back 53.8%, 3 s
+epoch 42: loss 0.044, phoneme error rate 52.7%, held back 53.7%, 3 s
+epoch 43: loss 0.045, phoneme error rate 53.2%, held back 54.1%, 3 s
+epoch 44: loss 0.045, phoneme error rate 53.3%, held back 53.6%, 3 s
+kept epoch 14: the best on the 98 held-back training sentences (51.9%). Its validation error rate is 52.1%
+saved runs/sizes/cnn_w256_s1.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: IH K T S | K K K N T | HH V | EH N IH IY |
+=== width 256, seed 2
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 1,387,305 parameters, on mps
+epoch 1: loss 4.891, phoneme error rate 100.0%, held back 100.0%, 4 s
+epoch 2: loss 3.305, phoneme error rate 93.8%, held back 94.0%, 3 s
+epoch 3: loss 3.145, phoneme error rate 90.9%, held back 91.3%, 3 s
+epoch 4: loss 2.962, phoneme error rate 81.2%, held back 82.1%, 3 s
+epoch 5: loss 2.582, phoneme error rate 75.6%, held back 75.9%, 3 s
+epoch 6: loss 2.194, phoneme error rate 67.4%, held back 67.1%, 3 s
+epoch 7: loss 1.880, phoneme error rate 61.2%, held back 61.3%, 3 s
+epoch 8: loss 1.623, phoneme error rate 57.2%, held back 56.9%, 3 s
+epoch 9: loss 1.382, phoneme error rate 53.5%, held back 53.9%, 3 s
+epoch 10: loss 1.151, phoneme error rate 52.2%, held back 52.8%, 3 s
+epoch 11: loss 0.934, phoneme error rate 52.5%, held back 52.5%, 3 s
+epoch 12: loss 0.749, phoneme error rate 52.1%, held back 52.6%, 3 s
+epoch 13: loss 0.590, phoneme error rate 52.5%, held back 51.9%, 3 s
+epoch 14: loss 0.452, phoneme error rate 52.2%, held back 52.3%, 3 s
+epoch 15: loss 0.346, phoneme error rate 52.4%, held back 52.4%, 3 s
+epoch 16: loss 0.269, phoneme error rate 52.6%, held back 53.2%, 3 s
+epoch 17: loss 0.215, phoneme error rate 52.6%, held back 52.6%, 3 s
+epoch 18: loss 0.181, phoneme error rate 51.9%, held back 52.7%, 3 s
+epoch 19: loss 0.150, phoneme error rate 52.7%, held back 52.6%, 3 s
+epoch 20: loss 0.123, phoneme error rate 52.9%, held back 53.7%, 3 s
+epoch 21: loss 0.112, phoneme error rate 52.5%, held back 52.9%, 3 s
+epoch 22: loss 0.093, phoneme error rate 53.1%, held back 53.3%, 3 s
+epoch 23: loss 0.083, phoneme error rate 52.4%, held back 52.5%, 3 s
+epoch 24: loss 0.075, phoneme error rate 52.5%, held back 52.6%, 3 s
+epoch 25: loss 0.067, phoneme error rate 53.1%, held back 53.2%, 3 s
+epoch 26: loss 0.071, phoneme error rate 53.1%, held back 53.2%, 3 s
+epoch 27: loss 0.064, phoneme error rate 52.7%, held back 53.7%, 3 s
+epoch 28: loss 0.058, phoneme error rate 52.3%, held back 52.6%, 3 s
+epoch 29: loss 0.055, phoneme error rate 52.6%, held back 52.9%, 3 s
+epoch 30: loss 0.050, phoneme error rate 51.7%, held back 52.9%, 3 s
+epoch 31: loss 0.044, phoneme error rate 52.1%, held back 52.3%, 3 s
+epoch 32: loss 0.047, phoneme error rate 53.1%, held back 53.4%, 3 s
+epoch 33: loss 0.042, phoneme error rate 52.6%, held back 53.1%, 3 s
+epoch 34: loss 0.040, phoneme error rate 52.6%, held back 53.3%, 3 s
+epoch 35: loss 0.035, phoneme error rate 52.6%, held back 53.4%, 3 s
+epoch 36: loss 0.038, phoneme error rate 52.0%, held back 53.1%, 3 s
+epoch 37: loss 0.037, phoneme error rate 52.8%, held back 53.3%, 3 s
+epoch 38: loss 0.038, phoneme error rate 53.1%, held back 53.4%, 3 s
+epoch 39: loss 0.040, phoneme error rate 52.9%, held back 53.4%, 3 s
+epoch 40: loss 0.037, phoneme error rate 52.6%, held back 53.1%, 3 s
+epoch 41: loss 0.034, phoneme error rate 52.4%, held back 53.5%, 3 s
+epoch 42: loss 0.032, phoneme error rate 52.4%, held back 53.1%, 3 s
+epoch 43: loss 0.035, phoneme error rate 53.2%, held back 53.0%, 3 s
+kept epoch 13: the best on the 98 held-back training sentences (51.9%). Its validation error rate is 52.5%
+saved runs/sizes/cnn_w256_s2.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: IH T | T G N D | | AH V | F V N IH AH IY |
+=== width 128, seed 0
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 578,985 parameters, on mps
+epoch 1: loss 6.080, phoneme error rate 100.0%, held back 100.0%, 3 s
+epoch 2: loss 3.343, phoneme error rate 100.0%, held back 100.0%, 2 s
+epoch 3: loss 3.214, phoneme error rate 98.1%, held back 98.3%, 2 s
+epoch 4: loss 3.112, phoneme error rate 91.1%, held back 92.3%, 2 s
+epoch 5: loss 2.915, phoneme error rate 84.0%, held back 85.5%, 2 s
+epoch 6: loss 2.607, phoneme error rate 77.7%, held back 78.0%, 2 s
+epoch 7: loss 2.312, phoneme error rate 73.1%, held back 73.0%, 2 s
+epoch 8: loss 2.069, phoneme error rate 68.8%, held back 68.7%, 2 s
+epoch 9: loss 1.860, phoneme error rate 64.3%, held back 64.9%, 2 s
+epoch 10: loss 1.683, phoneme error rate 62.0%, held back 62.3%, 2 s
+epoch 11: loss 1.518, phoneme error rate 60.2%, held back 60.8%, 2 s
+epoch 12: loss 1.358, phoneme error rate 55.9%, held back 56.9%, 2 s
+epoch 13: loss 1.213, phoneme error rate 55.6%, held back 56.0%, 2 s
+epoch 14: loss 1.083, phoneme error rate 54.4%, held back 54.5%, 2 s
+epoch 15: loss 0.948, phoneme error rate 53.8%, held back 53.3%, 2 s
+epoch 16: loss 0.833, phoneme error rate 53.7%, held back 53.6%, 2 s
+epoch 17: loss 0.739, phoneme error rate 53.2%, held back 53.0%, 2 s
+epoch 18: loss 0.642, phoneme error rate 53.7%, held back 54.4%, 2 s
+epoch 19: loss 0.554, phoneme error rate 53.7%, held back 53.7%, 2 s
+epoch 20: loss 0.482, phoneme error rate 54.0%, held back 54.8%, 2 s
+epoch 21: loss 0.425, phoneme error rate 53.5%, held back 54.0%, 2 s
+epoch 22: loss 0.364, phoneme error rate 53.8%, held back 54.2%, 2 s
+epoch 23: loss 0.325, phoneme error rate 54.0%, held back 53.7%, 2 s
+epoch 24: loss 0.294, phoneme error rate 53.8%, held back 53.7%, 2 s
+epoch 25: loss 0.263, phoneme error rate 53.5%, held back 53.6%, 2 s
+epoch 26: loss 0.232, phoneme error rate 53.7%, held back 54.3%, 2 s
+epoch 27: loss 0.211, phoneme error rate 53.7%, held back 53.8%, 2 s
+epoch 28: loss 0.191, phoneme error rate 54.2%, held back 54.2%, 2 s
+epoch 29: loss 0.181, phoneme error rate 54.0%, held back 53.9%, 2 s
+epoch 30: loss 0.168, phoneme error rate 53.9%, held back 54.0%, 2 s
+epoch 31: loss 0.150, phoneme error rate 53.9%, held back 53.8%, 2 s
+epoch 32: loss 0.146, phoneme error rate 55.1%, held back 55.4%, 2 s
+epoch 33: loss 0.133, phoneme error rate 54.8%, held back 55.2%, 2 s
+epoch 34: loss 0.127, phoneme error rate 54.6%, held back 54.3%, 2 s
+epoch 35: loss 0.123, phoneme error rate 54.1%, held back 54.7%, 2 s
+epoch 36: loss 0.120, phoneme error rate 54.5%, held back 55.0%, 2 s
+epoch 37: loss 0.119, phoneme error rate 54.7%, held back 54.9%, 2 s
+epoch 38: loss 0.108, phoneme error rate 54.9%, held back 54.6%, 2 s
+epoch 39: loss 0.103, phoneme error rate 54.4%, held back 54.4%, 2 s
+epoch 40: loss 0.094, phoneme error rate 54.3%, held back 55.3%, 2 s
+epoch 41: loss 0.093, phoneme error rate 54.8%, held back 54.4%, 2 s
+epoch 42: loss 0.090, phoneme error rate 54.4%, held back 55.3%, 2 s
+epoch 43: loss 0.088, phoneme error rate 54.6%, held back 55.0%, 2 s
+epoch 44: loss 0.086, phoneme error rate 54.8%, held back 54.6%, 2 s
+epoch 45: loss 0.080, phoneme error rate 54.3%, held back 54.9%, 2 s
+epoch 46: loss 0.082, phoneme error rate 54.6%, held back 55.6%, 2 s
+epoch 47: loss 0.078, phoneme error rate 55.1%, held back 54.7%, 2 s
+kept epoch 17: the best on the 98 held-back training sentences (53.0%). Its validation error rate is 53.2%
+saved runs/sizes/cnn_w128_s0.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: IH T S | K K D | | AH AH V | F N IY |
+=== width 128, seed 1
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 578,985 parameters, on mps
+epoch 1: loss 5.993, phoneme error rate 100.0%, held back 100.0%, 3 s
+epoch 2: loss 3.354, phoneme error rate 100.0%, held back 100.0%, 2 s
+epoch 3: loss 3.213, phoneme error rate 99.4%, held back 99.5%, 2 s
+epoch 4: loss 3.103, phoneme error rate 90.5%, held back 91.7%, 2 s
+epoch 5: loss 2.870, phoneme error rate 80.4%, held back 80.8%, 2 s
+epoch 6: loss 2.546, phoneme error rate 77.1%, held back 76.7%, 2 s
+epoch 7: loss 2.252, phoneme error rate 71.3%, held back 70.7%, 2 s
+epoch 8: loss 2.022, phoneme error rate 70.4%, held back 70.6%, 2 s
+epoch 9: loss 1.842, phoneme error rate 65.3%, held back 65.1%, 2 s
+epoch 10: loss 1.666, phoneme error rate 62.5%, held back 62.7%, 2 s
+epoch 11: loss 1.521, phoneme error rate 61.9%, held back 61.9%, 2 s
+epoch 12: loss 1.363, phoneme error rate 58.3%, held back 59.7%, 2 s
+epoch 13: loss 1.220, phoneme error rate 57.3%, held back 58.1%, 2 s
+epoch 14: loss 1.089, phoneme error rate 54.2%, held back 55.7%, 2 s
+epoch 15: loss 0.956, phoneme error rate 54.7%, held back 54.9%, 2 s
+epoch 16: loss 0.854, phoneme error rate 54.6%, held back 53.7%, 2 s
+epoch 17: loss 0.756, phoneme error rate 53.7%, held back 54.1%, 2 s
+epoch 18: loss 0.660, phoneme error rate 53.7%, held back 53.5%, 2 s
+epoch 19: loss 0.585, phoneme error rate 54.4%, held back 53.3%, 2 s
+epoch 20: loss 0.501, phoneme error rate 53.8%, held back 54.0%, 2 s
+epoch 21: loss 0.442, phoneme error rate 54.3%, held back 54.0%, 2 s
+epoch 22: loss 0.387, phoneme error rate 54.8%, held back 54.3%, 2 s
+epoch 23: loss 0.349, phoneme error rate 54.5%, held back 54.5%, 2 s
+epoch 24: loss 0.317, phoneme error rate 54.3%, held back 55.4%, 2 s
+epoch 25: loss 0.276, phoneme error rate 55.0%, held back 55.0%, 2 s
+epoch 26: loss 0.259, phoneme error rate 54.3%, held back 55.3%, 2 s
+epoch 27: loss 0.239, phoneme error rate 54.7%, held back 54.7%, 2 s
+epoch 28: loss 0.210, phoneme error rate 54.8%, held back 54.6%, 2 s
+epoch 29: loss 0.190, phoneme error rate 54.7%, held back 55.0%, 2 s
+epoch 30: loss 0.179, phoneme error rate 54.7%, held back 55.3%, 2 s
+epoch 31: loss 0.164, phoneme error rate 54.9%, held back 55.0%, 2 s
+epoch 32: loss 0.156, phoneme error rate 54.0%, held back 54.3%, 2 s
+epoch 33: loss 0.148, phoneme error rate 54.8%, held back 54.6%, 2 s
+epoch 34: loss 0.144, phoneme error rate 54.7%, held back 54.7%, 2 s
+epoch 35: loss 0.134, phoneme error rate 55.2%, held back 55.0%, 2 s
+epoch 36: loss 0.123, phoneme error rate 55.3%, held back 54.9%, 2 s
+epoch 37: loss 0.119, phoneme error rate 54.9%, held back 54.9%, 2 s
+epoch 38: loss 0.114, phoneme error rate 55.1%, held back 54.6%, 2 s
+epoch 39: loss 0.109, phoneme error rate 54.5%, held back 54.7%, 2 s
+epoch 40: loss 0.110, phoneme error rate 55.2%, held back 54.8%, 2 s
+epoch 41: loss 0.112, phoneme error rate 54.9%, held back 55.3%, 2 s
+epoch 42: loss 0.111, phoneme error rate 54.2%, held back 54.9%, 2 s
+epoch 43: loss 0.103, phoneme error rate 54.3%, held back 54.7%, 2 s
+epoch 44: loss 0.098, phoneme error rate 55.0%, held back 54.3%, 2 s
+epoch 45: loss 0.095, phoneme error rate 54.8%, held back 55.0%, 2 s
+epoch 46: loss 0.089, phoneme error rate 54.1%, held back 54.0%, 2 s
+epoch 47: loss 0.091, phoneme error rate 54.7%, held back 54.6%, 2 s
+epoch 48: loss 0.091, phoneme error rate 55.1%, held back 55.0%, 2 s
+epoch 49: loss 0.084, phoneme error rate 54.6%, held back 55.1%, 2 s
+kept epoch 19: the best on the 98 held-back training sentences (53.3%). Its validation error rate is 54.4%
+saved runs/sizes/cnn_w128_s1.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: IH T S | K N D | | V | F IY |
+=== width 128, seed 2
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 578,985 parameters, on mps
+epoch 1: loss 6.471, phoneme error rate 100.0%, held back 100.0%, 3 s
+epoch 2: loss 3.316, phoneme error rate 100.0%, held back 100.0%, 2 s
+epoch 3: loss 3.210, phoneme error rate 100.0%, held back 100.0%, 2 s
+epoch 4: loss 3.134, phoneme error rate 98.3%, held back 98.6%, 2 s
+epoch 5: loss 2.969, phoneme error rate 87.1%, held back 88.4%, 2 s
+epoch 6: loss 2.659, phoneme error rate 79.3%, held back 79.1%, 2 s
+epoch 7: loss 2.356, phoneme error rate 76.0%, held back 76.0%, 2 s
+epoch 8: loss 2.125, phoneme error rate 72.7%, held back 72.6%, 2 s
+epoch 9: loss 1.940, phoneme error rate 68.8%, held back 68.9%, 2 s
+epoch 10: loss 1.772, phoneme error rate 66.0%, held back 65.8%, 2 s
+epoch 11: loss 1.622, phoneme error rate 66.0%, held back 65.2%, 2 s
+epoch 12: loss 1.483, phoneme error rate 61.4%, held back 61.1%, 2 s
+epoch 13: loss 1.349, phoneme error rate 61.8%, held back 61.2%, 2 s
+epoch 14: loss 1.218, phoneme error rate 58.4%, held back 57.5%, 2 s
+epoch 15: loss 1.103, phoneme error rate 56.7%, held back 57.4%, 2 s
+epoch 16: loss 0.985, phoneme error rate 55.5%, held back 55.6%, 2 s
+epoch 17: loss 0.881, phoneme error rate 54.5%, held back 54.8%, 2 s
+epoch 18: loss 0.779, phoneme error rate 54.6%, held back 55.6%, 2 s
+epoch 19: loss 0.699, phoneme error rate 54.7%, held back 54.8%, 2 s
+epoch 20: loss 0.617, phoneme error rate 54.4%, held back 55.2%, 2 s
+epoch 21: loss 0.537, phoneme error rate 54.7%, held back 55.2%, 2 s
+epoch 22: loss 0.480, phoneme error rate 54.8%, held back 55.1%, 2 s
+epoch 23: loss 0.440, phoneme error rate 54.6%, held back 55.7%, 2 s
+epoch 24: loss 0.387, phoneme error rate 54.9%, held back 54.6%, 2 s
+epoch 25: loss 0.345, phoneme error rate 55.3%, held back 55.8%, 2 s
+epoch 26: loss 0.309, phoneme error rate 55.2%, held back 54.9%, 2 s
+epoch 27: loss 0.281, phoneme error rate 55.2%, held back 55.4%, 2 s
+epoch 28: loss 0.261, phoneme error rate 55.4%, held back 55.0%, 2 s
+epoch 29: loss 0.229, phoneme error rate 54.8%, held back 55.0%, 2 s
+epoch 30: loss 0.212, phoneme error rate 54.8%, held back 56.3%, 2 s
+epoch 31: loss 0.198, phoneme error rate 54.8%, held back 56.0%, 2 s
+epoch 32: loss 0.184, phoneme error rate 54.9%, held back 55.6%, 2 s
+epoch 33: loss 0.176, phoneme error rate 54.8%, held back 55.4%, 2 s
+epoch 34: loss 0.160, phoneme error rate 55.6%, held back 55.1%, 2 s
+epoch 35: loss 0.147, phoneme error rate 54.7%, held back 55.2%, 2 s
+epoch 36: loss 0.141, phoneme error rate 55.4%, held back 55.1%, 2 s
+epoch 37: loss 0.134, phoneme error rate 55.2%, held back 56.0%, 2 s
+epoch 38: loss 0.131, phoneme error rate 55.3%, held back 56.1%, 2 s
+epoch 39: loss 0.130, phoneme error rate 55.2%, held back 56.2%, 2 s
+epoch 40: loss 0.120, phoneme error rate 55.0%, held back 55.6%, 2 s
+epoch 41: loss 0.116, phoneme error rate 55.0%, held back 55.7%, 2 s
+epoch 42: loss 0.113, phoneme error rate 56.5%, held back 56.4%, 2 s
+epoch 43: loss 0.109, phoneme error rate 55.8%, held back 55.8%, 2 s
+epoch 44: loss 0.103, phoneme error rate 55.7%, held back 55.7%, 2 s
+epoch 45: loss 0.095, phoneme error rate 55.0%, held back 55.7%, 2 s
+epoch 46: loss 0.093, phoneme error rate 55.1%, held back 55.4%, 2 s
+epoch 47: loss 0.088, phoneme error rate 55.7%, held back 55.7%, 2 s
+epoch 48: loss 0.088, phoneme error rate 55.2%, held back 55.9%, 2 s
+epoch 49: loss 0.091, phoneme error rate 56.0%, held back 56.3%, 2 s
+epoch 50: loss 0.089, phoneme error rate 56.1%, held back 55.4%, 2 s
+epoch 51: loss 0.089, phoneme error rate 55.8%, held back 56.1%, 2 s
+epoch 52: loss 0.081, phoneme error rate 55.8%, held back 56.3%, 2 s
+epoch 53: loss 0.083, phoneme error rate 55.3%, held back 55.8%, 2 s
+epoch 54: loss 0.082, phoneme error rate 55.4%, held back 56.1%, 2 s
+kept epoch 24: the best on the 98 held-back training sentences (54.6%). Its validation error rate is 54.9%
+saved runs/sizes/cnn_w128_s2.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: T | G K N D | | AH V | IY |
+=== width 64, seed 0
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 260,841 parameters, on mps
+epoch 1: loss 7.864, phoneme error rate 96.6%, held back 96.4%, 2 s
+epoch 2: loss 3.789, phoneme error rate 96.6%, held back 96.4%, 2 s
+epoch 3: loss 3.511, phoneme error rate 96.6%, held back 96.4%, 1 s
+epoch 4: loss 3.381, phoneme error rate 96.6%, held back 96.4%, 1 s
+epoch 5: loss 3.291, phoneme error rate 96.6%, held back 96.2%, 2 s
+epoch 6: loss 3.212, phoneme error rate 95.8%, held back 95.5%, 2 s
+epoch 7: loss 3.132, phoneme error rate 91.5%, held back 91.0%, 1 s
+epoch 8: loss 3.053, phoneme error rate 87.5%, held back 87.3%, 1 s
+epoch 9: loss 2.965, phoneme error rate 81.2%, held back 81.2%, 1 s
+epoch 10: loss 2.856, phoneme error rate 79.3%, held back 78.6%, 1 s
+epoch 11: loss 2.722, phoneme error rate 76.4%, held back 77.1%, 1 s
+epoch 12: loss 2.578, phoneme error rate 75.6%, held back 75.3%, 1 s
+epoch 13: loss 2.431, phoneme error rate 73.3%, held back 73.1%, 1 s
+epoch 14: loss 2.273, phoneme error rate 72.7%, held back 72.4%, 1 s
+epoch 15: loss 2.116, phoneme error rate 71.7%, held back 71.3%, 2 s
+epoch 16: loss 1.965, phoneme error rate 72.6%, held back 72.3%, 1 s
+epoch 17: loss 1.821, phoneme error rate 73.0%, held back 72.5%, 1 s
+epoch 18: loss 1.683, phoneme error rate 73.1%, held back 72.1%, 1 s
+epoch 19: loss 1.550, phoneme error rate 74.1%, held back 72.8%, 1 s
+epoch 20: loss 1.439, phoneme error rate 73.3%, held back 72.9%, 1 s
+epoch 21: loss 1.329, phoneme error rate 74.4%, held back 72.8%, 1 s
+epoch 22: loss 1.229, phoneme error rate 75.4%, held back 73.9%, 1 s
+epoch 23: loss 1.149, phoneme error rate 75.6%, held back 73.7%, 1 s
+epoch 24: loss 1.062, phoneme error rate 74.8%, held back 73.4%, 1 s
+epoch 25: loss 1.008, phoneme error rate 76.2%, held back 74.7%, 1 s
+epoch 26: loss 0.960, phoneme error rate 77.2%, held back 75.3%, 1 s
+epoch 27: loss 0.894, phoneme error rate 76.4%, held back 74.3%, 1 s
+epoch 28: loss 0.850, phoneme error rate 77.0%, held back 74.8%, 1 s
+epoch 29: loss 0.810, phoneme error rate 76.8%, held back 75.2%, 2 s
+epoch 30: loss 0.759, phoneme error rate 77.8%, held back 76.0%, 1 s
+epoch 31: loss 0.724, phoneme error rate 77.6%, held back 75.3%, 1 s
+epoch 32: loss 0.704, phoneme error rate 77.8%, held back 76.6%, 1 s
+epoch 33: loss 0.671, phoneme error rate 76.9%, held back 74.5%, 1 s
+epoch 34: loss 0.643, phoneme error rate 77.0%, held back 75.0%, 1 s
+epoch 35: loss 0.615, phoneme error rate 76.7%, held back 75.7%, 1 s
+epoch 36: loss 0.590, phoneme error rate 78.2%, held back 76.2%, 2 s
+epoch 37: loss 0.578, phoneme error rate 79.3%, held back 76.2%, 1 s
+epoch 38: loss 0.565, phoneme error rate 79.6%, held back 76.8%, 2 s
+epoch 39: loss 0.550, phoneme error rate 78.5%, held back 76.2%, 1 s
+epoch 40: loss 0.551, phoneme error rate 80.3%, held back 78.0%, 1 s
+epoch 41: loss 0.535, phoneme error rate 78.5%, held back 76.5%, 1 s
+epoch 42: loss 0.510, phoneme error rate 81.0%, held back 78.6%, 2 s
+epoch 43: loss 0.493, phoneme error rate 78.6%, held back 76.7%, 1 s
+epoch 44: loss 0.490, phoneme error rate 79.7%, held back 76.8%, 1 s
+epoch 45: loss 0.459, phoneme error rate 78.3%, held back 75.4%, 1 s
+kept epoch 15: the best on the 98 held-back training sentences (71.3%). Its validation error rate is 71.7%
+saved runs/sizes/cnn_w64_s0.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: EH T | AH T S | L AA T | R B IY |
+=== width 64, seed 1
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 260,841 parameters, on mps
+epoch 1: loss 7.518, phoneme error rate 99.6%, held back 99.8%, 3 s
+epoch 2: loss 3.385, phoneme error rate 99.3%, held back 99.7%, 2 s
+epoch 3: loss 3.225, phoneme error rate 95.5%, held back 97.1%, 2 s
+epoch 4: loss 3.143, phoneme error rate 90.3%, held back 91.5%, 2 s
+epoch 5: loss 3.026, phoneme error rate 86.5%, held back 87.4%, 1 s
+epoch 6: loss 2.838, phoneme error rate 81.6%, held back 82.7%, 1 s
+epoch 7: loss 2.629, phoneme error rate 76.1%, held back 76.5%, 1 s
+epoch 8: loss 2.432, phoneme error rate 73.1%, held back 73.3%, 1 s
+epoch 9: loss 2.243, phoneme error rate 70.5%, held back 70.4%, 1 s
+epoch 10: loss 2.089, phoneme error rate 67.6%, held back 68.2%, 2 s
+epoch 11: loss 1.953, phoneme error rate 65.8%, held back 66.3%, 2 s
+epoch 12: loss 1.835, phoneme error rate 63.6%, held back 64.4%, 1 s
+epoch 13: loss 1.724, phoneme error rate 62.0%, held back 62.9%, 1 s
+epoch 14: loss 1.615, phoneme error rate 61.0%, held back 62.0%, 1 s
+epoch 15: loss 1.519, phoneme error rate 59.4%, held back 60.6%, 1 s
+epoch 16: loss 1.426, phoneme error rate 58.4%, held back 59.5%, 1 s
+epoch 17: loss 1.342, phoneme error rate 56.8%, held back 58.0%, 1 s
+epoch 18: loss 1.248, phoneme error rate 56.8%, held back 57.3%, 1 s
+epoch 19: loss 1.165, phoneme error rate 56.8%, held back 57.3%, 1 s
+epoch 20: loss 1.092, phoneme error rate 57.2%, held back 57.0%, 2 s
+epoch 21: loss 1.019, phoneme error rate 57.2%, held back 56.7%, 2 s
+epoch 22: loss 0.958, phoneme error rate 56.4%, held back 56.8%, 2 s
+epoch 23: loss 0.892, phoneme error rate 56.9%, held back 57.3%, 1 s
+epoch 24: loss 0.840, phoneme error rate 57.1%, held back 57.3%, 1 s
+epoch 25: loss 0.793, phoneme error rate 57.1%, held back 56.8%, 1 s
+epoch 26: loss 0.741, phoneme error rate 56.5%, held back 56.7%, 1 s
+epoch 27: loss 0.697, phoneme error rate 57.4%, held back 57.6%, 1 s
+epoch 28: loss 0.669, phoneme error rate 57.5%, held back 57.8%, 1 s
+epoch 29: loss 0.618, phoneme error rate 58.0%, held back 57.6%, 1 s
+epoch 30: loss 0.587, phoneme error rate 57.9%, held back 58.4%, 1 s
+epoch 31: loss 0.554, phoneme error rate 58.0%, held back 58.8%, 1 s
+epoch 32: loss 0.535, phoneme error rate 58.2%, held back 58.4%, 1 s
+epoch 33: loss 0.502, phoneme error rate 58.0%, held back 59.7%, 1 s
+epoch 34: loss 0.481, phoneme error rate 57.8%, held back 58.3%, 1 s
+epoch 35: loss 0.459, phoneme error rate 57.9%, held back 57.8%, 1 s
+epoch 36: loss 0.436, phoneme error rate 58.1%, held back 58.4%, 1 s
+epoch 37: loss 0.415, phoneme error rate 58.8%, held back 59.7%, 1 s
+epoch 38: loss 0.407, phoneme error rate 58.0%, held back 57.8%, 1 s
+epoch 39: loss 0.390, phoneme error rate 59.0%, held back 59.1%, 1 s
+epoch 40: loss 0.372, phoneme error rate 58.5%, held back 58.4%, 1 s
+epoch 41: loss 0.359, phoneme error rate 59.2%, held back 58.4%, 2 s
+epoch 42: loss 0.351, phoneme error rate 59.1%, held back 58.7%, 1 s
+epoch 43: loss 0.332, phoneme error rate 59.0%, held back 59.0%, 1 s
+epoch 44: loss 0.318, phoneme error rate 58.4%, held back 58.7%, 1 s
+epoch 45: loss 0.314, phoneme error rate 59.0%, held back 59.1%, 1 s
+epoch 46: loss 0.302, phoneme error rate 59.0%, held back 59.8%, 1 s
+epoch 47: loss 0.297, phoneme error rate 58.7%, held back 57.8%, 1 s
+epoch 48: loss 0.289, phoneme error rate 58.9%, held back 58.8%, 1 s
+epoch 49: loss 0.274, phoneme error rate 58.3%, held back 57.5%, 1 s
+epoch 50: loss 0.274, phoneme error rate 57.9%, held back 57.7%, 1 s
+epoch 51: loss 0.273, phoneme error rate 59.0%, held back 58.2%, 1 s
+kept epoch 21: the best on the 98 held-back training sentences (56.7%). Its validation error rate is 57.2%
+saved runs/sizes/cnn_w64_s1.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: T | T | K N T | M | F N AH IY |
+=== width 64, seed 2
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 260,841 parameters, on mps
+epoch 1: loss 7.940, phoneme error rate 99.8%, held back 99.9%, 4 s
+epoch 2: loss 3.393, phoneme error rate 99.9%, held back 99.9%, 2 s
+epoch 3: loss 3.244, phoneme error rate 99.1%, held back 98.9%, 2 s
+epoch 4: loss 3.159, phoneme error rate 92.8%, held back 93.9%, 2 s
+epoch 5: loss 3.048, phoneme error rate 88.1%, held back 88.9%, 1 s
+epoch 6: loss 2.863, phoneme error rate 84.1%, held back 85.2%, 1 s
+epoch 7: loss 2.637, phoneme error rate 79.6%, held back 79.8%, 1 s
+epoch 8: loss 2.441, phoneme error rate 76.9%, held back 76.8%, 1 s
+epoch 9: loss 2.274, phoneme error rate 74.8%, held back 74.4%, 1 s
+epoch 10: loss 2.131, phoneme error rate 71.9%, held back 71.5%, 1 s
+epoch 11: loss 2.001, phoneme error rate 69.7%, held back 69.6%, 1 s
+epoch 12: loss 1.878, phoneme error rate 65.2%, held back 65.8%, 1 s
+epoch 13: loss 1.767, phoneme error rate 64.1%, held back 64.7%, 1 s
+epoch 14: loss 1.662, phoneme error rate 62.5%, held back 63.5%, 1 s
+epoch 15: loss 1.561, phoneme error rate 61.5%, held back 62.8%, 1 s
+epoch 16: loss 1.467, phoneme error rate 61.1%, held back 61.1%, 1 s
+epoch 17: loss 1.388, phoneme error rate 60.3%, held back 60.9%, 1 s
+epoch 18: loss 1.311, phoneme error rate 57.6%, held back 59.1%, 1 s
+epoch 19: loss 1.233, phoneme error rate 58.1%, held back 58.4%, 1 s
+epoch 20: loss 1.151, phoneme error rate 57.1%, held back 57.9%, 1 s
+epoch 21: loss 1.081, phoneme error rate 56.3%, held back 57.2%, 1 s
+epoch 22: loss 1.018, phoneme error rate 56.1%, held back 57.2%, 1 s
+epoch 23: loss 0.961, phoneme error rate 56.2%, held back 57.3%, 1 s
+epoch 24: loss 0.908, phoneme error rate 56.8%, held back 58.2%, 1 s
+epoch 25: loss 0.853, phoneme error rate 56.7%, held back 56.8%, 1 s
+epoch 26: loss 0.799, phoneme error rate 56.6%, held back 56.9%, 1 s
+epoch 27: loss 0.757, phoneme error rate 56.7%, held back 57.3%, 1 s
+epoch 28: loss 0.717, phoneme error rate 57.0%, held back 56.8%, 2 s
+epoch 29: loss 0.684, phoneme error rate 57.3%, held back 57.9%, 1 s
+epoch 30: loss 0.645, phoneme error rate 57.2%, held back 57.9%, 1 s
+epoch 31: loss 0.611, phoneme error rate 57.4%, held back 57.2%, 1 s
+epoch 32: loss 0.580, phoneme error rate 57.6%, held back 58.0%, 1 s
+epoch 33: loss 0.557, phoneme error rate 58.1%, held back 58.2%, 1 s
+epoch 34: loss 0.531, phoneme error rate 58.0%, held back 58.1%, 1 s
+epoch 35: loss 0.497, phoneme error rate 57.4%, held back 58.1%, 1 s
+epoch 36: loss 0.477, phoneme error rate 57.8%, held back 58.6%, 1 s
+epoch 37: loss 0.459, phoneme error rate 57.8%, held back 58.1%, 1 s
+epoch 38: loss 0.441, phoneme error rate 58.4%, held back 59.4%, 1 s
+epoch 39: loss 0.435, phoneme error rate 58.4%, held back 59.1%, 1 s
+epoch 40: loss 0.409, phoneme error rate 58.6%, held back 59.4%, 1 s
+epoch 41: loss 0.401, phoneme error rate 58.4%, held back 59.2%, 1 s
+epoch 42: loss 0.379, phoneme error rate 58.5%, held back 58.8%, 1 s
+epoch 43: loss 0.366, phoneme error rate 58.8%, held back 58.1%, 1 s
+epoch 44: loss 0.355, phoneme error rate 58.5%, held back 58.5%, 1 s
+epoch 45: loss 0.342, phoneme error rate 58.2%, held back 58.4%, 1 s
+epoch 46: loss 0.331, phoneme error rate 58.3%, held back 58.3%, 1 s
+epoch 47: loss 0.324, phoneme error rate 58.9%, held back 59.4%, 1 s
+epoch 48: loss 0.315, phoneme error rate 57.9%, held back 58.3%, 1 s
+epoch 49: loss 0.313, phoneme error rate 58.1%, held back 59.3%, 1 s
+epoch 50: loss 0.302, phoneme error rate 59.0%, held back 59.6%, 1 s
+epoch 51: loss 0.302, phoneme error rate 58.5%, held back 59.5%, 2 s
+epoch 52: loss 0.287, phoneme error rate 58.6%, held back 59.2%, 1 s
+epoch 53: loss 0.276, phoneme error rate 58.9%, held back 59.6%, 1 s
+epoch 54: loss 0.270, phoneme error rate 58.2%, held back 59.0%, 1 s
+epoch 55: loss 0.274, phoneme error rate 59.1%, held back 59.8%, 1 s
+epoch 56: loss 0.261, phoneme error rate 59.6%, held back 59.6%, 1 s
+epoch 57: loss 0.255, phoneme error rate 58.7%, held back 58.9%, 1 s
+epoch 58: loss 0.259, phoneme error rate 58.9%, held back 59.0%, 1 s
+kept epoch 28: the best on the 98 held-back training sentences (56.8%). Its validation error rate is 57.0%
+saved runs/sizes/cnn_w64_s2.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: T S | K T N D | AH AH V | D IY |
+=== width 32, seed 0
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 123,273 parameters, on mps
+epoch 1: loss 8.478, phoneme error rate 99.2%, held back 99.2%, 3 s
+epoch 2: loss 3.616, phoneme error rate 99.4%, held back 99.4%, 1 s
+epoch 3: loss 3.304, phoneme error rate 99.6%, held back 99.7%, 1 s
+epoch 4: loss 3.221, phoneme error rate 98.8%, held back 99.0%, 1 s
+epoch 5: loss 3.159, phoneme error rate 93.1%, held back 94.4%, 1 s
+epoch 6: loss 3.089, phoneme error rate 85.8%, held back 86.8%, 1 s
+epoch 7: loss 2.992, phoneme error rate 83.0%, held back 84.0%, 1 s
+epoch 8: loss 2.875, phoneme error rate 80.2%, held back 80.5%, 1 s
+epoch 9: loss 2.747, phoneme error rate 78.6%, held back 78.3%, 1 s
+epoch 10: loss 2.616, phoneme error rate 76.1%, held back 75.9%, 1 s
+epoch 11: loss 2.504, phoneme error rate 74.1%, held back 74.5%, 1 s
+epoch 12: loss 2.398, phoneme error rate 72.0%, held back 72.6%, 1 s
+epoch 13: loss 2.304, phoneme error rate 71.5%, held back 71.7%, 1 s
+epoch 14: loss 2.213, phoneme error rate 69.9%, held back 70.1%, 1 s
+epoch 15: loss 2.125, phoneme error rate 67.2%, held back 67.5%, 1 s
+epoch 16: loss 2.038, phoneme error rate 67.2%, held back 67.1%, 1 s
+epoch 17: loss 1.961, phoneme error rate 65.3%, held back 65.2%, 1 s
+epoch 18: loss 1.894, phoneme error rate 65.2%, held back 65.5%, 1 s
+epoch 19: loss 1.828, phoneme error rate 63.8%, held back 64.7%, 1 s
+epoch 20: loss 1.767, phoneme error rate 62.8%, held back 63.1%, 1 s
+epoch 21: loss 1.710, phoneme error rate 62.6%, held back 62.8%, 1 s
+epoch 22: loss 1.661, phoneme error rate 61.9%, held back 62.2%, 1 s
+epoch 23: loss 1.617, phoneme error rate 61.7%, held back 61.6%, 1 s
+epoch 24: loss 1.570, phoneme error rate 61.6%, held back 62.1%, 1 s
+epoch 25: loss 1.528, phoneme error rate 61.2%, held back 61.8%, 1 s
+epoch 26: loss 1.475, phoneme error rate 61.2%, held back 61.5%, 1 s
+epoch 27: loss 1.440, phoneme error rate 61.0%, held back 61.2%, 2 s
+epoch 28: loss 1.397, phoneme error rate 61.1%, held back 61.2%, 1 s
+epoch 29: loss 1.367, phoneme error rate 60.3%, held back 60.7%, 1 s
+epoch 30: loss 1.328, phoneme error rate 60.5%, held back 60.6%, 1 s
+epoch 31: loss 1.300, phoneme error rate 60.8%, held back 60.7%, 1 s
+epoch 32: loss 1.267, phoneme error rate 60.9%, held back 60.8%, 1 s
+epoch 33: loss 1.241, phoneme error rate 60.6%, held back 60.7%, 1 s
+epoch 34: loss 1.218, phoneme error rate 60.9%, held back 61.6%, 2 s
+epoch 35: loss 1.190, phoneme error rate 61.3%, held back 61.7%, 1 s
+epoch 36: loss 1.158, phoneme error rate 61.0%, held back 61.7%, 1 s
+epoch 37: loss 1.144, phoneme error rate 60.6%, held back 61.5%, 1 s
+epoch 38: loss 1.124, phoneme error rate 60.9%, held back 61.6%, 1 s
+epoch 39: loss 1.090, phoneme error rate 60.7%, held back 60.6%, 1 s
+epoch 40: loss 1.070, phoneme error rate 61.6%, held back 61.3%, 1 s
+epoch 41: loss 1.056, phoneme error rate 61.0%, held back 61.7%, 1 s
+epoch 42: loss 1.045, phoneme error rate 61.3%, held back 62.1%, 1 s
+epoch 43: loss 1.015, phoneme error rate 61.6%, held back 62.2%, 1 s
+epoch 44: loss 1.005, phoneme error rate 61.0%, held back 61.9%, 1 s
+epoch 45: loss 0.991, phoneme error rate 62.0%, held back 62.4%, 1 s
+epoch 46: loss 0.977, phoneme error rate 61.2%, held back 62.3%, 1 s
+epoch 47: loss 0.965, phoneme error rate 62.2%, held back 62.8%, 1 s
+epoch 48: loss 0.943, phoneme error rate 61.7%, held back 62.3%, 1 s
+epoch 49: loss 0.932, phoneme error rate 62.1%, held back 62.8%, 1 s
+epoch 50: loss 0.928, phoneme error rate 61.6%, held back 62.2%, 1 s
+epoch 51: loss 0.899, phoneme error rate 61.2%, held back 61.4%, 1 s
+epoch 52: loss 0.896, phoneme error rate 61.4%, held back 61.5%, 1 s
+epoch 53: loss 0.893, phoneme error rate 62.7%, held back 62.5%, 1 s
+epoch 54: loss 0.884, phoneme error rate 62.1%, held back 61.7%, 1 s
+epoch 55: loss 0.863, phoneme error rate 61.8%, held back 62.1%, 1 s
+epoch 56: loss 0.859, phoneme error rate 62.5%, held back 63.0%, 1 s
+epoch 57: loss 0.841, phoneme error rate 61.9%, held back 62.4%, 1 s
+epoch 58: loss 0.832, phoneme error rate 61.5%, held back 62.1%, 1 s
+epoch 59: loss 0.839, phoneme error rate 62.1%, held back 62.3%, 1 s
+epoch 60: loss 0.818, phoneme error rate 61.8%, held back 63.1%, 1 s
+epoch 61: loss 0.802, phoneme error rate 62.6%, held back 62.7%, 1 s
+epoch 62: loss 0.815, phoneme error rate 63.0%, held back 63.4%, 2 s
+epoch 63: loss 0.799, phoneme error rate 62.9%, held back 63.2%, 2 s
+epoch 64: loss 0.793, phoneme error rate 62.0%, held back 62.1%, 1 s
+epoch 65: loss 0.788, phoneme error rate 62.2%, held back 62.7%, 1 s
+epoch 66: loss 0.785, phoneme error rate 62.3%, held back 62.8%, 1 s
+epoch 67: loss 0.767, phoneme error rate 62.2%, held back 62.3%, 1 s
+epoch 68: loss 0.767, phoneme error rate 63.1%, held back 63.0%, 1 s
+epoch 69: loss 0.771, phoneme error rate 62.4%, held back 62.3%, 1 s
+kept epoch 39: the best on the 98 held-back training sentences (60.6%). Its validation error rate is 60.7%
+saved runs/sizes/cnn_w32_s0.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: DH T | G K N D | | IH AH V M | F N ER T |
+=== width 32, seed 1
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 123,273 parameters, on mps
+epoch 1: loss 11.122, phoneme error rate 83.0%, held back 84.2%, 3 s
+epoch 2: loss 4.054, phoneme error rate 82.1%, held back 83.1%, 1 s
+epoch 3: loss 3.507, phoneme error rate 79.0%, held back 79.4%, 1 s
+epoch 4: loss 3.233, phoneme error rate 77.5%, held back 78.4%, 1 s
+epoch 5: loss 3.089, phoneme error rate 76.2%, held back 76.8%, 1 s
+epoch 6: loss 2.984, phoneme error rate 74.9%, held back 75.6%, 1 s
+epoch 7: loss 2.883, phoneme error rate 74.0%, held back 74.4%, 1 s
+epoch 8: loss 2.791, phoneme error rate 72.2%, held back 72.6%, 1 s
+epoch 9: loss 2.701, phoneme error rate 71.7%, held back 71.6%, 1 s
+epoch 10: loss 2.617, phoneme error rate 69.4%, held back 69.1%, 1 s
+epoch 11: loss 2.541, phoneme error rate 68.6%, held back 68.8%, 1 s
+epoch 12: loss 2.464, phoneme error rate 66.9%, held back 66.5%, 1 s
+epoch 13: loss 2.389, phoneme error rate 66.0%, held back 66.0%, 1 s
+epoch 14: loss 2.322, phoneme error rate 65.8%, held back 66.4%, 1 s
+epoch 15: loss 2.259, phoneme error rate 64.1%, held back 65.3%, 2 s
+epoch 16: loss 2.192, phoneme error rate 63.9%, held back 64.9%, 1 s
+epoch 17: loss 2.130, phoneme error rate 63.2%, held back 63.3%, 1 s
+epoch 18: loss 2.064, phoneme error rate 63.1%, held back 63.2%, 1 s
+epoch 19: loss 2.013, phoneme error rate 63.7%, held back 64.0%, 1 s
+epoch 20: loss 1.951, phoneme error rate 62.7%, held back 63.8%, 1 s
+epoch 21: loss 1.891, phoneme error rate 62.8%, held back 63.6%, 1 s
+epoch 22: loss 1.836, phoneme error rate 63.2%, held back 64.0%, 1 s
+epoch 23: loss 1.793, phoneme error rate 63.4%, held back 63.8%, 1 s
+epoch 24: loss 1.745, phoneme error rate 63.4%, held back 64.2%, 1 s
+epoch 25: loss 1.691, phoneme error rate 63.2%, held back 64.6%, 1 s
+epoch 26: loss 1.646, phoneme error rate 63.5%, held back 64.3%, 1 s
+epoch 27: loss 1.604, phoneme error rate 63.3%, held back 64.2%, 1 s
+epoch 28: loss 1.561, phoneme error rate 64.3%, held back 64.7%, 1 s
+epoch 29: loss 1.520, phoneme error rate 64.1%, held back 65.3%, 1 s
+epoch 30: loss 1.486, phoneme error rate 64.3%, held back 64.9%, 1 s
+epoch 31: loss 1.449, phoneme error rate 64.8%, held back 65.6%, 1 s
+epoch 32: loss 1.421, phoneme error rate 65.2%, held back 64.7%, 1 s
+epoch 33: loss 1.394, phoneme error rate 65.8%, held back 66.4%, 1 s
+epoch 34: loss 1.358, phoneme error rate 65.5%, held back 66.6%, 1 s
+epoch 35: loss 1.323, phoneme error rate 66.0%, held back 66.2%, 1 s
+epoch 36: loss 1.301, phoneme error rate 65.7%, held back 65.5%, 1 s
+epoch 37: loss 1.282, phoneme error rate 66.6%, held back 66.4%, 1 s
+epoch 38: loss 1.252, phoneme error rate 66.1%, held back 66.7%, 1 s
+epoch 39: loss 1.219, phoneme error rate 67.4%, held back 67.0%, 1 s
+epoch 40: loss 1.213, phoneme error rate 65.8%, held back 66.0%, 1 s
+epoch 41: loss 1.196, phoneme error rate 65.6%, held back 65.7%, 1 s
+epoch 42: loss 1.177, phoneme error rate 67.4%, held back 66.8%, 1 s
+epoch 43: loss 1.161, phoneme error rate 67.1%, held back 67.1%, 1 s
+epoch 44: loss 1.144, phoneme error rate 67.3%, held back 67.0%, 1 s
+epoch 45: loss 1.126, phoneme error rate 66.9%, held back 67.3%, 1 s
+epoch 46: loss 1.110, phoneme error rate 67.5%, held back 67.2%, 1 s
+epoch 47: loss 1.091, phoneme error rate 67.4%, held back 67.1%, 1 s
+epoch 48: loss 1.077, phoneme error rate 67.9%, held back 67.9%, 1 s
+kept epoch 18: the best on the 98 held-back training sentences (63.2%). Its validation error rate is 63.1%
+saved runs/sizes/cnn_w32_s1.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: T | IY T | AH V | T N D |
+=== width 32, seed 2
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 123,273 parameters, on mps
+epoch 1: loss 10.770, phoneme error rate 82.4%, held back 83.2%, 3 s
+epoch 2: loss 4.106, phoneme error rate 86.5%, held back 87.2%, 2 s
+epoch 3: loss 3.631, phoneme error rate 85.9%, held back 86.9%, 2 s
+epoch 4: loss 3.488, phoneme error rate 86.2%, held back 87.0%, 2 s
+epoch 5: loss 3.391, phoneme error rate 86.9%, held back 87.6%, 1 s
+epoch 6: loss 3.335, phoneme error rate 87.0%, held back 88.0%, 1 s
+epoch 7: loss 3.283, phoneme error rate 86.4%, held back 87.5%, 1 s
+epoch 8: loss 3.240, phoneme error rate 86.0%, held back 86.8%, 1 s
+epoch 9: loss 3.201, phoneme error rate 86.2%, held back 86.8%, 1 s
+epoch 10: loss 3.163, phoneme error rate 86.0%, held back 86.5%, 1 s
+epoch 11: loss 3.119, phoneme error rate 85.2%, held back 85.8%, 1 s
+epoch 12: loss 3.082, phoneme error rate 84.5%, held back 85.5%, 1 s
+epoch 13: loss 3.039, phoneme error rate 84.2%, held back 85.0%, 1 s
+epoch 14: loss 2.995, phoneme error rate 82.7%, held back 83.1%, 1 s
+epoch 15: loss 2.950, phoneme error rate 82.3%, held back 82.8%, 1 s
+epoch 16: loss 2.898, phoneme error rate 81.7%, held back 82.2%, 1 s
+epoch 17: loss 2.842, phoneme error rate 81.0%, held back 81.5%, 2 s
+epoch 18: loss 2.785, phoneme error rate 80.7%, held back 81.1%, 1 s
+epoch 19: loss 2.722, phoneme error rate 79.3%, held back 79.5%, 1 s
+epoch 20: loss 2.666, phoneme error rate 79.0%, held back 79.8%, 1 s
+epoch 21: loss 2.605, phoneme error rate 77.8%, held back 77.9%, 1 s
+epoch 22: loss 2.552, phoneme error rate 77.0%, held back 77.3%, 1 s
+epoch 23: loss 2.496, phoneme error rate 77.0%, held back 76.8%, 1 s
+epoch 24: loss 2.433, phoneme error rate 77.4%, held back 77.9%, 1 s
+epoch 25: loss 2.385, phoneme error rate 76.2%, held back 75.7%, 1 s
+epoch 26: loss 2.329, phoneme error rate 75.8%, held back 74.9%, 1 s
+epoch 27: loss 2.275, phoneme error rate 76.3%, held back 75.9%, 1 s
+epoch 28: loss 2.227, phoneme error rate 75.4%, held back 74.5%, 1 s
+epoch 29: loss 2.173, phoneme error rate 75.8%, held back 75.4%, 1 s
+epoch 30: loss 2.125, phoneme error rate 75.8%, held back 74.9%, 1 s
+epoch 31: loss 2.081, phoneme error rate 75.2%, held back 74.6%, 1 s
+epoch 32: loss 2.055, phoneme error rate 75.5%, held back 74.1%, 1 s
+epoch 33: loss 2.005, phoneme error rate 75.1%, held back 73.9%, 1 s
+epoch 34: loss 1.968, phoneme error rate 74.7%, held back 74.3%, 1 s
+epoch 35: loss 1.940, phoneme error rate 75.2%, held back 74.4%, 1 s
+epoch 36: loss 1.911, phoneme error rate 75.5%, held back 74.7%, 1 s
+epoch 37: loss 1.874, phoneme error rate 75.2%, held back 74.6%, 1 s
+epoch 38: loss 1.857, phoneme error rate 75.2%, held back 74.2%, 1 s
+epoch 39: loss 1.817, phoneme error rate 75.0%, held back 74.0%, 1 s
+epoch 40: loss 1.794, phoneme error rate 75.1%, held back 73.8%, 1 s
+epoch 41: loss 1.766, phoneme error rate 75.5%, held back 73.8%, 1 s
+epoch 42: loss 1.751, phoneme error rate 75.6%, held back 73.8%, 1 s
+epoch 43: loss 1.726, phoneme error rate 75.8%, held back 74.4%, 2 s
+epoch 44: loss 1.701, phoneme error rate 75.5%, held back 75.4%, 1 s
+epoch 45: loss 1.706, phoneme error rate 75.4%, held back 74.6%, 1 s
+epoch 46: loss 1.668, phoneme error rate 75.3%, held back 74.7%, 1 s
+epoch 47: loss 1.662, phoneme error rate 75.8%, held back 74.5%, 1 s
+epoch 48: loss 1.635, phoneme error rate 75.8%, held back 75.0%, 1 s
+epoch 49: loss 1.615, phoneme error rate 75.9%, held back 75.2%, 1 s
+epoch 50: loss 1.613, phoneme error rate 76.4%, held back 74.9%, 1 s
+epoch 51: loss 1.573, phoneme error rate 75.8%, held back 74.8%, 1 s
+epoch 52: loss 1.577, phoneme error rate 76.8%, held back 74.7%, 1 s
+epoch 53: loss 1.567, phoneme error rate 76.8%, held back 74.9%, 1 s
+epoch 54: loss 1.570, phoneme error rate 76.4%, held back 74.8%, 1 s
+epoch 55: loss 1.549, phoneme error rate 76.5%, held back 75.0%, 1 s
+epoch 56: loss 1.539, phoneme error rate 77.1%, held back 74.8%, 1 s
+epoch 57: loss 1.524, phoneme error rate 77.1%, held back 75.7%, 1 s
+epoch 58: loss 1.499, phoneme error rate 76.8%, held back 75.5%, 1 s
+epoch 59: loss 1.501, phoneme error rate 76.4%, held back 73.8%, 1 s
+epoch 60: loss 1.493, phoneme error rate 77.0%, held back 74.5%, 1 s
+epoch 61: loss 1.499, phoneme error rate 77.1%, held back 75.3%, 1 s
+epoch 62: loss 1.495, phoneme error rate 76.5%, held back 75.3%, 1 s
+epoch 63: loss 1.483, phoneme error rate 75.9%, held back 74.5%, 1 s
+epoch 64: loss 1.472, phoneme error rate 76.6%, held back 73.6%, 1 s
+epoch 65: loss 1.458, phoneme error rate 77.7%, held back 74.9%, 1 s
+epoch 66: loss 1.452, phoneme error rate 75.8%, held back 74.9%, 1 s
+epoch 67: loss 1.431, phoneme error rate 76.1%, held back 75.2%, 1 s
+epoch 68: loss 1.441, phoneme error rate 76.7%, held back 75.9%, 1 s
+epoch 69: loss 1.427, phoneme error rate 76.0%, held back 74.7%, 1 s
+epoch 70: loss 1.414, phoneme error rate 76.9%, held back 74.7%, 1 s
+epoch 71: loss 1.408, phoneme error rate 77.1%, held back 75.3%, 1 s
+epoch 72: loss 1.399, phoneme error rate 76.6%, held back 74.6%, 1 s
+epoch 73: loss 1.388, phoneme error rate 77.5%, held back 74.8%, 1 s
+epoch 74: loss 1.399, phoneme error rate 77.0%, held back 75.0%, 1 s
+epoch 75: loss 1.376, phoneme error rate 77.6%, held back 74.8%, 1 s
+epoch 76: loss 1.392, phoneme error rate 76.9%, held back 74.9%, 1 s
+epoch 77: loss 1.362, phoneme error rate 77.2%, held back 75.1%, 1 s
+epoch 78: loss 1.368, phoneme error rate 77.6%, held back 75.5%, 1 s
+epoch 79: loss 1.362, phoneme error rate 77.7%, held back 75.2%, 1 s
+epoch 80: loss 1.364, phoneme error rate 77.1%, held back 75.0%, 1 s
+epoch 81: loss 1.359, phoneme error rate 77.3%, held back 74.7%, 1 s
+epoch 82: loss 1.348, phoneme error rate 76.8%, held back 74.8%, 1 s
+epoch 83: loss 1.340, phoneme error rate 77.1%, held back 75.2%, 1 s
+epoch 84: loss 1.347, phoneme error rate 77.6%, held back 75.5%, 1 s
+epoch 85: loss 1.322, phoneme error rate 78.4%, held back 75.9%, 1 s
+epoch 86: loss 1.330, phoneme error rate 77.1%, held back 75.0%, 1 s
+epoch 87: loss 1.333, phoneme error rate 77.1%, held back 75.5%, 1 s
+epoch 88: loss 1.322, phoneme error rate 77.9%, held back 75.4%, 1 s
+epoch 89: loss 1.330, phoneme error rate 77.3%, held back 74.8%, 1 s
+epoch 90: loss 1.307, phoneme error rate 77.5%, held back 75.4%, 1 s
+epoch 91: loss 1.309, phoneme error rate 76.9%, held back 75.2%, 1 s
+epoch 92: loss 1.314, phoneme error rate 77.9%, held back 75.8%, 1 s
+epoch 93: loss 1.310, phoneme error rate 79.0%, held back 76.3%, 1 s
+epoch 94: loss 1.303, phoneme error rate 77.9%, held back 75.7%, 1 s
+kept epoch 64: the best on the 98 held-back training sentences (73.6%). Its validation error rate is 76.6%
+saved runs/sizes/cnn_w32_s2.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: T IH Y M F R R N | IH T |
+=== width 16, seed 0
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 59,865 parameters, on mps
+epoch 1: loss 13.463, phoneme error rate 100.0%, held back 100.0%, 3 s
+epoch 2: loss 4.020, phoneme error rate 100.0%, held back 100.0%, 2 s
+epoch 3: loss 3.445, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 4: loss 3.306, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 5: loss 3.250, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 6: loss 3.215, phoneme error rate 99.9%, held back 100.0%, 1 s
+epoch 7: loss 3.185, phoneme error rate 99.7%, held back 99.9%, 1 s
+epoch 8: loss 3.158, phoneme error rate 99.1%, held back 99.4%, 1 s
+epoch 9: loss 3.125, phoneme error rate 98.0%, held back 98.3%, 1 s
+epoch 10: loss 3.091, phoneme error rate 95.8%, held back 96.7%, 1 s
+epoch 11: loss 3.052, phoneme error rate 94.0%, held back 95.2%, 1 s
+epoch 12: loss 3.011, phoneme error rate 90.5%, held back 92.1%, 1 s
+epoch 13: loss 2.959, phoneme error rate 88.1%, held back 89.3%, 1 s
+epoch 14: loss 2.908, phoneme error rate 85.5%, held back 86.5%, 1 s
+epoch 15: loss 2.847, phoneme error rate 83.4%, held back 84.6%, 1 s
+epoch 16: loss 2.777, phoneme error rate 82.0%, held back 82.9%, 1 s
+epoch 17: loss 2.700, phoneme error rate 80.6%, held back 81.1%, 1 s
+epoch 18: loss 2.631, phoneme error rate 80.3%, held back 80.6%, 1 s
+epoch 19: loss 2.559, phoneme error rate 78.6%, held back 78.6%, 1 s
+epoch 20: loss 2.488, phoneme error rate 76.6%, held back 75.6%, 1 s
+epoch 21: loss 2.426, phoneme error rate 75.9%, held back 75.0%, 1 s
+epoch 22: loss 2.370, phoneme error rate 75.7%, held back 74.5%, 1 s
+epoch 23: loss 2.316, phoneme error rate 72.5%, held back 71.9%, 1 s
+epoch 24: loss 2.262, phoneme error rate 73.1%, held back 72.9%, 1 s
+epoch 25: loss 2.212, phoneme error rate 71.2%, held back 70.8%, 1 s
+epoch 26: loss 2.177, phoneme error rate 71.2%, held back 71.0%, 1 s
+epoch 27: loss 2.133, phoneme error rate 69.8%, held back 70.1%, 1 s
+epoch 28: loss 2.096, phoneme error rate 68.2%, held back 68.5%, 1 s
+epoch 29: loss 2.056, phoneme error rate 68.9%, held back 68.5%, 1 s
+epoch 30: loss 2.030, phoneme error rate 68.7%, held back 68.4%, 1 s
+epoch 31: loss 1.995, phoneme error rate 67.1%, held back 67.1%, 1 s
+epoch 32: loss 1.968, phoneme error rate 68.0%, held back 68.4%, 1 s
+epoch 33: loss 1.939, phoneme error rate 67.1%, held back 67.8%, 1 s
+epoch 34: loss 1.919, phoneme error rate 67.1%, held back 67.3%, 1 s
+epoch 35: loss 1.894, phoneme error rate 66.0%, held back 66.9%, 1 s
+epoch 36: loss 1.867, phoneme error rate 67.2%, held back 66.9%, 2 s
+epoch 37: loss 1.852, phoneme error rate 67.1%, held back 66.6%, 1 s
+epoch 38: loss 1.824, phoneme error rate 66.0%, held back 66.3%, 1 s
+epoch 39: loss 1.807, phoneme error rate 66.0%, held back 65.8%, 1 s
+epoch 40: loss 1.793, phoneme error rate 65.9%, held back 65.7%, 1 s
+epoch 41: loss 1.773, phoneme error rate 65.5%, held back 65.3%, 1 s
+epoch 42: loss 1.761, phoneme error rate 65.9%, held back 65.3%, 1 s
+epoch 43: loss 1.745, phoneme error rate 65.7%, held back 66.1%, 1 s
+epoch 44: loss 1.717, phoneme error rate 65.6%, held back 65.3%, 1 s
+epoch 45: loss 1.713, phoneme error rate 65.4%, held back 65.5%, 1 s
+epoch 46: loss 1.702, phoneme error rate 65.1%, held back 64.8%, 1 s
+epoch 47: loss 1.691, phoneme error rate 65.1%, held back 65.7%, 1 s
+epoch 48: loss 1.683, phoneme error rate 65.2%, held back 64.9%, 1 s
+epoch 49: loss 1.669, phoneme error rate 65.2%, held back 65.2%, 1 s
+epoch 50: loss 1.654, phoneme error rate 64.9%, held back 65.1%, 1 s
+epoch 51: loss 1.649, phoneme error rate 65.5%, held back 64.9%, 1 s
+epoch 52: loss 1.633, phoneme error rate 65.5%, held back 65.3%, 1 s
+epoch 53: loss 1.631, phoneme error rate 65.2%, held back 65.2%, 1 s
+epoch 54: loss 1.618, phoneme error rate 65.0%, held back 65.5%, 1 s
+epoch 55: loss 1.613, phoneme error rate 65.1%, held back 65.5%, 1 s
+epoch 56: loss 1.603, phoneme error rate 65.2%, held back 65.2%, 1 s
+epoch 57: loss 1.592, phoneme error rate 65.0%, held back 64.8%, 1 s
+epoch 58: loss 1.589, phoneme error rate 65.7%, held back 65.1%, 1 s
+epoch 59: loss 1.581, phoneme error rate 65.5%, held back 65.5%, 1 s
+epoch 60: loss 1.574, phoneme error rate 65.1%, held back 65.4%, 1 s
+epoch 61: loss 1.571, phoneme error rate 65.2%, held back 65.6%, 1 s
+epoch 62: loss 1.557, phoneme error rate 65.3%, held back 65.6%, 1 s
+epoch 63: loss 1.553, phoneme error rate 65.1%, held back 65.3%, 1 s
+epoch 64: loss 1.544, phoneme error rate 65.0%, held back 65.0%, 1 s
+epoch 65: loss 1.540, phoneme error rate 65.2%, held back 65.3%, 1 s
+epoch 66: loss 1.541, phoneme error rate 65.3%, held back 65.8%, 1 s
+epoch 67: loss 1.526, phoneme error rate 65.0%, held back 65.7%, 1 s
+epoch 68: loss 1.530, phoneme error rate 65.0%, held back 65.7%, 1 s
+epoch 69: loss 1.519, phoneme error rate 65.1%, held back 65.7%, 1 s
+epoch 70: loss 1.515, phoneme error rate 65.3%, held back 65.8%, 1 s
+epoch 71: loss 1.516, phoneme error rate 65.1%, held back 65.1%, 1 s
+epoch 72: loss 1.514, phoneme error rate 65.6%, held back 65.8%, 1 s
+epoch 73: loss 1.495, phoneme error rate 65.3%, held back 65.6%, 1 s
+epoch 74: loss 1.504, phoneme error rate 65.6%, held back 65.6%, 1 s
+epoch 75: loss 1.495, phoneme error rate 65.3%, held back 65.6%, 1 s
+epoch 76: loss 1.487, phoneme error rate 65.7%, held back 65.2%, 1 s
+kept epoch 46: the best on the 98 held-back training sentences (64.8%). Its validation error rate is 65.1%
+saved runs/sizes/cnn_w16_s0.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: IH T S | | D | | | IH IY |
+=== width 16, seed 1
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 59,865 parameters, on mps
+epoch 1: loss 14.835, phoneme error rate 99.8%, held back 99.8%, 3 s
+epoch 2: loss 4.076, phoneme error rate 99.8%, held back 100.0%, 1 s
+epoch 3: loss 3.615, phoneme error rate 99.8%, held back 99.9%, 1 s
+epoch 4: loss 3.440, phoneme error rate 99.9%, held back 100.0%, 2 s
+epoch 5: loss 3.346, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 6: loss 3.292, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 7: loss 3.258, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 8: loss 3.234, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 9: loss 3.218, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 10: loss 3.200, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 11: loss 3.181, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 12: loss 3.161, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 13: loss 3.140, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 14: loss 3.117, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 15: loss 3.092, phoneme error rate 99.9%, held back 99.8%, 1 s
+epoch 16: loss 3.058, phoneme error rate 99.7%, held back 99.6%, 1 s
+epoch 17: loss 3.016, phoneme error rate 95.2%, held back 95.5%, 1 s
+epoch 18: loss 2.947, phoneme error rate 85.6%, held back 86.9%, 1 s
+epoch 19: loss 2.862, phoneme error rate 81.9%, held back 82.4%, 1 s
+epoch 20: loss 2.767, phoneme error rate 80.0%, held back 79.5%, 1 s
+epoch 21: loss 2.684, phoneme error rate 76.7%, held back 76.2%, 1 s
+epoch 22: loss 2.609, phoneme error rate 76.8%, held back 76.0%, 1 s
+epoch 23: loss 2.527, phoneme error rate 75.7%, held back 75.3%, 1 s
+epoch 24: loss 2.460, phoneme error rate 75.0%, held back 74.5%, 1 s
+epoch 25: loss 2.401, phoneme error rate 73.0%, held back 72.1%, 1 s
+epoch 26: loss 2.345, phoneme error rate 71.3%, held back 70.9%, 1 s
+epoch 27: loss 2.292, phoneme error rate 71.2%, held back 70.5%, 1 s
+epoch 28: loss 2.244, phoneme error rate 70.4%, held back 70.4%, 1 s
+epoch 29: loss 2.206, phoneme error rate 69.6%, held back 69.5%, 1 s
+epoch 30: loss 2.166, phoneme error rate 69.4%, held back 69.2%, 1 s
+epoch 31: loss 2.129, phoneme error rate 68.2%, held back 68.1%, 1 s
+epoch 32: loss 2.095, phoneme error rate 67.8%, held back 67.7%, 1 s
+epoch 33: loss 2.060, phoneme error rate 67.9%, held back 68.3%, 1 s
+epoch 34: loss 2.026, phoneme error rate 67.7%, held back 67.7%, 1 s
+epoch 35: loss 2.004, phoneme error rate 66.7%, held back 67.4%, 1 s
+epoch 36: loss 1.971, phoneme error rate 66.6%, held back 67.1%, 2 s
+epoch 37: loss 1.950, phoneme error rate 66.8%, held back 67.5%, 1 s
+epoch 38: loss 1.925, phoneme error rate 66.1%, held back 66.7%, 1 s
+epoch 39: loss 1.907, phoneme error rate 66.5%, held back 67.5%, 1 s
+epoch 40: loss 1.879, phoneme error rate 66.5%, held back 67.4%, 1 s
+epoch 41: loss 1.862, phoneme error rate 66.1%, held back 66.4%, 1 s
+epoch 42: loss 1.837, phoneme error rate 65.9%, held back 66.9%, 1 s
+epoch 43: loss 1.826, phoneme error rate 65.9%, held back 66.7%, 1 s
+epoch 44: loss 1.816, phoneme error rate 66.3%, held back 67.0%, 1 s
+epoch 45: loss 1.798, phoneme error rate 66.5%, held back 67.0%, 1 s
+epoch 46: loss 1.782, phoneme error rate 66.1%, held back 66.1%, 1 s
+epoch 47: loss 1.764, phoneme error rate 65.6%, held back 66.7%, 1 s
+epoch 48: loss 1.752, phoneme error rate 65.2%, held back 66.3%, 1 s
+epoch 49: loss 1.731, phoneme error rate 65.3%, held back 66.2%, 2 s
+epoch 50: loss 1.709, phoneme error rate 65.9%, held back 67.0%, 2 s
+epoch 51: loss 1.713, phoneme error rate 65.7%, held back 66.3%, 1 s
+epoch 52: loss 1.706, phoneme error rate 65.8%, held back 66.4%, 1 s
+epoch 53: loss 1.688, phoneme error rate 65.6%, held back 66.4%, 1 s
+epoch 54: loss 1.680, phoneme error rate 65.8%, held back 66.1%, 1 s
+epoch 55: loss 1.672, phoneme error rate 65.8%, held back 65.8%, 1 s
+epoch 56: loss 1.662, phoneme error rate 65.3%, held back 65.6%, 1 s
+epoch 57: loss 1.648, phoneme error rate 65.5%, held back 65.4%, 1 s
+epoch 58: loss 1.649, phoneme error rate 65.3%, held back 65.8%, 1 s
+epoch 59: loss 1.631, phoneme error rate 65.6%, held back 65.9%, 1 s
+epoch 60: loss 1.626, phoneme error rate 65.5%, held back 65.5%, 1 s
+epoch 61: loss 1.618, phoneme error rate 65.5%, held back 65.3%, 1 s
+epoch 62: loss 1.610, phoneme error rate 65.3%, held back 65.5%, 1 s
+epoch 63: loss 1.603, phoneme error rate 65.5%, held back 65.7%, 1 s
+epoch 64: loss 1.607, phoneme error rate 65.5%, held back 65.6%, 1 s
+epoch 65: loss 1.595, phoneme error rate 65.5%, held back 65.6%, 1 s
+epoch 66: loss 1.592, phoneme error rate 65.6%, held back 65.8%, 1 s
+epoch 67: loss 1.587, phoneme error rate 65.3%, held back 65.8%, 1 s
+epoch 68: loss 1.576, phoneme error rate 65.5%, held back 66.1%, 1 s
+epoch 69: loss 1.577, phoneme error rate 65.4%, held back 65.3%, 1 s
+epoch 70: loss 1.561, phoneme error rate 65.7%, held back 64.7%, 1 s
+epoch 71: loss 1.557, phoneme error rate 65.9%, held back 65.3%, 1 s
+epoch 72: loss 1.544, phoneme error rate 65.4%, held back 65.0%, 1 s
+epoch 73: loss 1.544, phoneme error rate 65.8%, held back 65.2%, 1 s
+epoch 74: loss 1.547, phoneme error rate 65.4%, held back 65.1%, 1 s
+epoch 75: loss 1.545, phoneme error rate 65.0%, held back 65.4%, 1 s
+epoch 76: loss 1.532, phoneme error rate 66.0%, held back 65.5%, 1 s
+epoch 77: loss 1.519, phoneme error rate 65.8%, held back 65.4%, 1 s
+epoch 78: loss 1.532, phoneme error rate 65.3%, held back 65.2%, 1 s
+epoch 79: loss 1.516, phoneme error rate 65.3%, held back 65.1%, 1 s
+epoch 80: loss 1.520, phoneme error rate 65.6%, held back 65.2%, 1 s
+epoch 81: loss 1.522, phoneme error rate 65.8%, held back 65.9%, 1 s
+epoch 82: loss 1.507, phoneme error rate 65.5%, held back 65.3%, 3 s
+epoch 83: loss 1.507, phoneme error rate 65.7%, held back 65.3%, 2 s
+epoch 84: loss 1.505, phoneme error rate 65.4%, held back 64.7%, 2 s
+epoch 85: loss 1.497, phoneme error rate 65.8%, held back 65.2%, 1 s
+epoch 86: loss 1.495, phoneme error rate 65.7%, held back 65.0%, 1 s
+epoch 87: loss 1.487, phoneme error rate 65.5%, held back 65.4%, 1 s
+epoch 88: loss 1.495, phoneme error rate 66.0%, held back 65.2%, 1 s
+epoch 89: loss 1.489, phoneme error rate 66.0%, held back 66.0%, 1 s
+epoch 90: loss 1.484, phoneme error rate 65.5%, held back 65.0%, 1 s
+epoch 91: loss 1.486, phoneme error rate 65.4%, held back 65.3%, 1 s
+epoch 92: loss 1.473, phoneme error rate 65.7%, held back 65.4%, 1 s
+epoch 93: loss 1.476, phoneme error rate 65.7%, held back 65.3%, 2 s
+epoch 94: loss 1.481, phoneme error rate 65.5%, held back 65.5%, 1 s
+epoch 95: loss 1.476, phoneme error rate 65.7%, held back 66.0%, 1 s
+epoch 96: loss 1.470, phoneme error rate 65.9%, held back 65.8%, 1 s
+epoch 97: loss 1.462, phoneme error rate 65.4%, held back 65.6%, 1 s
+epoch 98: loss 1.460, phoneme error rate 65.5%, held back 65.6%, 1 s
+epoch 99: loss 1.468, phoneme error rate 65.6%, held back 66.2%, 1 s
+epoch 100: loss 1.462, phoneme error rate 65.5%, held back 65.5%, 1 s
+kept epoch 70: the best on the 98 held-back training sentences (64.7%). Its validation error rate is 65.7%
+saved runs/sizes/cnn_w16_s1.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: IH T | G N N T | | IH IY V | P EY IY |
+=== width 16, seed 2
+8 days (t15.2024.07.21 to t15.2025.04.13): 886 training sentences, 267 validation, 98 held back from training
+model: cnn, 59,865 parameters, on mps
+epoch 1: loss 11.833, phoneme error rate 100.0%, held back 100.0%, 3 s
+epoch 2: loss 3.968, phoneme error rate 100.0%, held back 100.0%, 1 s
+epoch 3: loss 3.450, phoneme error rate 100.0%, held back 100.0%, 2 s
+epoch 4: loss 3.313, phoneme error rate 100.0%, held back 99.9%, 1 s
+epoch 5: loss 3.251, phoneme error rate 99.9%, held back 99.9%, 1 s
+epoch 6: loss 3.211, phoneme error rate 99.7%, held back 99.6%, 1 s
+epoch 7: loss 3.179, phoneme error rate 98.7%, held back 98.5%, 1 s
+epoch 8: loss 3.143, phoneme error rate 95.8%, held back 96.7%, 1 s
+epoch 9: loss 3.096, phoneme error rate 89.2%, held back 90.5%, 1 s
+epoch 10: loss 3.035, phoneme error rate 87.1%, held back 88.5%, 1 s
+epoch 11: loss 2.962, phoneme error rate 83.9%, held back 84.5%, 1 s
+epoch 12: loss 2.872, phoneme error rate 81.3%, held back 81.1%, 1 s
+epoch 13: loss 2.782, phoneme error rate 80.6%, held back 80.6%, 1 s
+epoch 14: loss 2.697, phoneme error rate 79.0%, held back 78.6%, 1 s
+epoch 15: loss 2.609, phoneme error rate 77.7%, held back 77.3%, 1 s
+epoch 16: loss 2.535, phoneme error rate 76.5%, held back 76.1%, 1 s
+epoch 17: loss 2.469, phoneme error rate 75.1%, held back 74.8%, 1 s
+epoch 18: loss 2.405, phoneme error rate 73.6%, held back 73.7%, 1 s
+epoch 19: loss 2.348, phoneme error rate 73.4%, held back 73.5%, 1 s
+epoch 20: loss 2.292, phoneme error rate 72.2%, held back 72.1%, 1 s
+epoch 21: loss 2.240, phoneme error rate 71.9%, held back 72.4%, 1 s
+epoch 22: loss 2.194, phoneme error rate 71.1%, held back 70.9%, 1 s
+epoch 23: loss 2.155, phoneme error rate 70.3%, held back 70.4%, 1 s
+epoch 24: loss 2.117, phoneme error rate 69.7%, held back 69.4%, 1 s
+epoch 25: loss 2.080, phoneme error rate 69.1%, held back 68.8%, 1 s
+epoch 26: loss 2.044, phoneme error rate 68.2%, held back 68.5%, 1 s
+epoch 27: loss 2.015, phoneme error rate 67.9%, held back 68.8%, 1 s
+epoch 28: loss 1.985, phoneme error rate 67.4%, held back 67.7%, 1 s
+epoch 29: loss 1.959, phoneme error rate 67.3%, held back 67.6%, 1 s
+epoch 30: loss 1.928, phoneme error rate 66.7%, held back 66.8%, 1 s
+epoch 31: loss 1.902, phoneme error rate 67.2%, held back 67.3%, 1 s
+epoch 32: loss 1.880, phoneme error rate 66.8%, held back 66.5%, 1 s
+epoch 33: loss 1.857, phoneme error rate 66.5%, held back 66.3%, 1 s
+epoch 34: loss 1.837, phoneme error rate 66.4%, held back 66.5%, 1 s
+epoch 35: loss 1.813, phoneme error rate 66.0%, held back 65.9%, 1 s
+epoch 36: loss 1.796, phoneme error rate 66.3%, held back 66.0%, 1 s
+epoch 37: loss 1.775, phoneme error rate 66.3%, held back 66.6%, 1 s
+epoch 38: loss 1.763, phoneme error rate 65.7%, held back 66.0%, 1 s
+epoch 39: loss 1.741, phoneme error rate 65.9%, held back 66.1%, 1 s
+epoch 40: loss 1.723, phoneme error rate 65.8%, held back 65.8%, 1 s
+epoch 41: loss 1.712, phoneme error rate 65.4%, held back 65.9%, 1 s
+epoch 42: loss 1.698, phoneme error rate 65.6%, held back 65.9%, 1 s
+epoch 43: loss 1.689, phoneme error rate 65.7%, held back 65.9%, 1 s
+epoch 44: loss 1.678, phoneme error rate 66.1%, held back 66.0%, 1 s
+epoch 45: loss 1.660, phoneme error rate 65.6%, held back 65.9%, 1 s
+epoch 46: loss 1.654, phoneme error rate 65.3%, held back 65.7%, 1 s
+epoch 47: loss 1.639, phoneme error rate 65.2%, held back 65.3%, 1 s
+epoch 48: loss 1.630, phoneme error rate 65.6%, held back 66.1%, 1 s
+epoch 49: loss 1.617, phoneme error rate 66.0%, held back 66.0%, 1 s
+epoch 50: loss 1.613, phoneme error rate 65.2%, held back 65.2%, 1 s
+epoch 51: loss 1.604, phoneme error rate 65.5%, held back 66.2%, 1 s
+epoch 52: loss 1.593, phoneme error rate 65.0%, held back 65.1%, 1 s
+epoch 53: loss 1.595, phoneme error rate 65.0%, held back 65.1%, 1 s
+epoch 54: loss 1.580, phoneme error rate 65.3%, held back 65.9%, 1 s
+epoch 55: loss 1.576, phoneme error rate 65.3%, held back 65.6%, 1 s
+epoch 56: loss 1.559, phoneme error rate 64.6%, held back 65.3%, 1 s
+epoch 57: loss 1.558, phoneme error rate 64.7%, held back 64.9%, 1 s
+epoch 58: loss 1.558, phoneme error rate 64.8%, held back 65.1%, 1 s
+epoch 59: loss 1.551, phoneme error rate 64.9%, held back 65.3%, 1 s
+epoch 60: loss 1.543, phoneme error rate 64.6%, held back 64.9%, 1 s
+epoch 61: loss 1.526, phoneme error rate 64.7%, held back 64.9%, 1 s
+epoch 62: loss 1.524, phoneme error rate 64.9%, held back 65.6%, 1 s
+epoch 63: loss 1.504, phoneme error rate 64.8%, held back 65.2%, 1 s
+epoch 64: loss 1.521, phoneme error rate 64.7%, held back 65.0%, 1 s
+epoch 65: loss 1.503, phoneme error rate 64.8%, held back 65.1%, 1 s
+epoch 66: loss 1.499, phoneme error rate 64.8%, held back 65.5%, 1 s
+epoch 67: loss 1.506, phoneme error rate 64.8%, held back 65.2%, 1 s
+epoch 68: loss 1.491, phoneme error rate 65.0%, held back 65.5%, 1 s
+epoch 69: loss 1.495, phoneme error rate 64.9%, held back 65.2%, 1 s
+epoch 70: loss 1.487, phoneme error rate 64.8%, held back 65.0%, 1 s
+epoch 71: loss 1.483, phoneme error rate 64.4%, held back 65.0%, 1 s
+epoch 72: loss 1.478, phoneme error rate 64.7%, held back 65.6%, 1 s
+epoch 73: loss 1.478, phoneme error rate 64.8%, held back 65.3%, 1 s
+epoch 74: loss 1.469, phoneme error rate 64.7%, held back 64.6%, 1 s
+epoch 75: loss 1.473, phoneme error rate 64.6%, held back 65.3%, 1 s
+epoch 76: loss 1.461, phoneme error rate 65.2%, held back 65.8%, 1 s
+epoch 77: loss 1.458, phoneme error rate 64.8%, held back 65.3%, 1 s
+epoch 78: loss 1.450, phoneme error rate 64.8%, held back 65.4%, 1 s
+epoch 79: loss 1.459, phoneme error rate 64.5%, held back 64.9%, 1 s
+epoch 80: loss 1.447, phoneme error rate 65.1%, held back 65.9%, 2 s
+epoch 81: loss 1.444, phoneme error rate 64.9%, held back 66.1%, 1 s
+epoch 82: loss 1.431, phoneme error rate 64.8%, held back 65.7%, 1 s
+epoch 83: loss 1.430, phoneme error rate 64.6%, held back 65.4%, 1 s
+epoch 84: loss 1.434, phoneme error rate 64.9%, held back 65.4%, 1 s
+epoch 85: loss 1.437, phoneme error rate 64.5%, held back 65.2%, 1 s
+epoch 86: loss 1.429, phoneme error rate 64.9%, held back 64.9%, 1 s
+epoch 87: loss 1.429, phoneme error rate 64.8%, held back 64.8%, 1 s
+epoch 88: loss 1.431, phoneme error rate 64.6%, held back 65.0%, 1 s
+epoch 89: loss 1.424, phoneme error rate 65.4%, held back 65.0%, 1 s
+epoch 90: loss 1.424, phoneme error rate 65.7%, held back 65.2%, 1 s
+epoch 91: loss 1.425, phoneme error rate 65.3%, held back 65.1%, 1 s
+epoch 92: loss 1.410, phoneme error rate 64.8%, held back 65.4%, 1 s
+epoch 93: loss 1.417, phoneme error rate 65.1%, held back 66.0%, 1 s
+epoch 94: loss 1.408, phoneme error rate 64.4%, held back 65.3%, 1 s
+epoch 95: loss 1.418, phoneme error rate 64.4%, held back 65.4%, 1 s
+epoch 96: loss 1.403, phoneme error rate 64.3%, held back 64.8%, 1 s
+epoch 97: loss 1.402, phoneme error rate 64.5%, held back 64.7%, 1 s
+epoch 98: loss 1.405, phoneme error rate 64.7%, held back 64.9%, 1 s
+epoch 99: loss 1.400, phoneme error rate 64.6%, held back 64.6%, 1 s
+epoch 100: loss 1.394, phoneme error rate 64.4%, held back 64.9%, 1 s
+kept epoch 99: the best on the 98 held-back training sentences (64.6%). Its validation error rate is 64.6%
+saved runs/sizes/cnn_w16_s2.pt
+example sentence: It's kind of funny.
+  truth: IH T S | K AY N D | AH V | F AH N IY |
+  model: IH IH S | D AA N N T | | AH AH V | F T |

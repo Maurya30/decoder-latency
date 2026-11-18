@@ -20,6 +20,7 @@ import json
 import shutil
 import struct
 import subprocess
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -80,6 +81,26 @@ def compare(host, model_path, days):
     if bench.wait() != 0:
         raise SystemExit("the Rust test bench stopped with an error (see above)")
     return {"sentences": sentences, "steps": steps, "steps_that_differ": differing, "rust_per": wrong / phonemes}
+
+
+def can_fail(host, model_path, rows):
+    """Proof that the comparison is able to fail: flip one bit of one weight and look again.
+
+    The Rust decoder gets the damaged file, Python keeps the good one. Returns how many
+    of the sentence's output steps then differ (it should not be zero).
+    """
+    q = load_int8(model_path)
+    damaged = bytearray(Path(model_path).read_bytes())
+    damaged[len(damaged) // 3] ^= 0x04   # a byte inside the first layer's weights
+    with tempfile.TemporaryDirectory() as folder:
+        path = Path(folder) / "damaged.bin"
+        path.write_bytes(damaged)
+        done = subprocess.run([host, "check", str(path)], input=as_bytes(rows) + struct.pack("<I", 0),
+                              stdout=subprocess.PIPE, check=True)
+    n_steps, = struct.unpack("<I", done.stdout[:4])
+    rust = np.frombuffer(done.stdout[4:], dtype="<i4").reshape(n_steps, N_CLASSES)
+    python = int_forward(q, quantize_rows(rows, q["in_inv_scale"]))
+    return int((rust != python).any(axis=1).sum()), n_steps
 
 
 def timing(host, model_path, rows, paced, steps=None, warmup=50):
@@ -143,6 +164,9 @@ def main():
         verdict = "identical" if found["steps_that_differ"] == 0 else f"DIFFERENT on {found['steps_that_differ']} steps"
         print(f"  {found['sentences']} sentences, {found['steps']:,} output steps, 41 scores each: {verdict}")
         print(f"  phoneme error rate from the Rust decoder's output: {100 * found['rust_per']:.1f}%")
+        differ, of = can_fail(host, str(path), load_split(days[-1:], "val")[0][0].numpy())
+        print(f"  with one bit of one weight flipped, {differ} of one sentence's {of} steps differ: the check can fail")
+        found["steps_that_differ_with_one_bit_flipped"] = differ
         entry = {"measured": datetime.date.today().isoformat(), "model": str(shown(path)), **found}
         if not args.no_timing:
             entry["timing"] = {}
@@ -162,6 +186,8 @@ def main():
         results[str(width)] = entry
         if found["steps_that_differ"]:
             raise SystemExit("the Rust decoder does not match the Python one")
+        if not differ:
+            raise SystemExit("a damaged model file still passed: the comparison is not checking anything")
 
     RESULTS.write_text(json.dumps(results, indent=2))
     print(f"\nsaved {shown(RESULTS)}")
