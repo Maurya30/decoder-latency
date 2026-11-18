@@ -3,3 +3,9 @@ data/
 __pycache__/
 *.pyc
 .DS_Store
+decoder-rs/target/
+decoder-rs/cortex-m/target/
+# sizes.py's trained models: only seed 0's 8-bit file of each narrower width is kept, for rust_check.py
+runs/sizes/*.pt
+runs/sizes/*_s[1-9]_int8.bin
+runs/sizes/cnn_w256_*

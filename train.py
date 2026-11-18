@@ -75,24 +75,39 @@ def main():
     parser.add_argument("--device", default="mps" if torch.backends.mps.is_available() else "cpu")
     parser.add_argument("--noise", type=float, default=0.0,
                         help="random noise added to the training rows, so the model cannot just memorise them")
+    parser.add_argument("--width", type=int, default=256, help="channels in the CNN's two hidden layers")
+    parser.add_argument("--seed", type=int, default=0, help="starting point for the random numbers")
+    parser.add_argument("--holdout", type=float, default=0.0,
+                        help="share of the training sentences to keep back and never train on. They decide which "
+                             "epoch's weights are kept, so the validation sentences never choose anything")
+    parser.add_argument("--patience", type=int, default=30,
+                        help="with --holdout: stop after this many epochs without a better held-back score")
     parser.add_argument("--out", default=None, help="where to save (default runs/<model>.pt)")
     args = parser.parse_args()
     out = args.out or RUNS / f"{args.model}.pt"
+    sized = {"width": args.width} if args.model == "cnn" else {}
 
-    torch.manual_seed(0)
+    torch.manual_seed(args.seed)
     days = list_sessions()[-args.days:]
     train = load_split(days, "train")
     val = load_split(days, "val")
-    print(f"{len(days)} days ({days[0]} to {days[-1]}): {len(train)} training sentences, {len(val)} validation")
+    held = []
+    if args.holdout > 0:   # every 10th training sentence, for --holdout 0.1
+        every = round(1 / args.holdout)
+        held, train = train[every - 1::every], [t for i, t in enumerate(train) if i % every != every - 1]
+    print(f"{len(days)} days ({days[0]} to {days[-1]}): {len(train)} training sentences, {len(val)} validation"
+          + (f", {len(held)} held back from training" if held else ""))
 
     train_loader = DataLoader(train, batch_size=args.batch, shuffle=True, collate_fn=collate)
     val_loader = DataLoader(val, batch_size=args.batch, collate_fn=collate)
+    held_loader = DataLoader(held, batch_size=args.batch, collate_fn=collate) if held else None
 
-    model = MODELS[args.model]().to(args.device)
+    model = MODELS[args.model](**sized).to(args.device)
     n_params = sum(p.numel() for p in model.parameters())
     print(f"model: {args.model}, {n_params:,} parameters, on {args.device}")
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 
+    best = None   # with --holdout: the best epoch so far, as (held-back error rate, epoch, weights, validation error rate)
     for epoch in range(1, args.epochs + 1):
         model.train()
         start, running = time.time(), 0.0
@@ -111,10 +126,22 @@ def main():
             optimizer.step()
             running += loss.item()
         per = phoneme_error_rate(model, val_loader, args.device)
-        print(f"epoch {epoch}: loss {running / len(train_loader):.3f}, "
-              f"phoneme error rate {100 * per:.1f}%, {time.time() - start:.0f} s")
+        line = f"epoch {epoch}: loss {running / len(train_loader):.3f}, phoneme error rate {100 * per:.1f}%"
+        if held:
+            held_per = phoneme_error_rate(model, held_loader, args.device)
+            line += f", held back {100 * held_per:.1f}%"
+            if best is None or held_per < best[0]:
+                best = (held_per, epoch, {k: v.detach().clone() for k, v in model.state_dict().items()}, per)
+        print(f"{line}, {time.time() - start:.0f} s", flush=True)
+        if held and epoch - best[1] >= args.patience:
+            break
 
-    save_model(model, args.model, out, days=days, epochs=args.epochs, val_per=per)
+    if held:
+        held_per, epoch, state, per = best
+        model.load_state_dict(state)
+        print(f"kept epoch {epoch}: the best on the {len(held)} held-back training sentences ({100 * held_per:.1f}%). "
+              f"Its validation error rate is {100 * per:.1f}%")
+    save_model(model, args.model, out, days=days, epochs=epoch, val_per=per, seed=args.seed, **sized)
     print(f"saved {shown(out)}")
 
     features, labels, sentence = val[0]

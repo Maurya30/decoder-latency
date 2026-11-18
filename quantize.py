@@ -36,8 +36,8 @@ import torch
 import torch.nn.functional as F
 
 from data import N_CLASSES, N_FEATURES, load_split
-from model import RUNS, SmallCNN, load_model, shown
-from train import decode, edit_distance, greedy_decode
+from model import RUNS, load_model, shown
+from train import edit_distance, greedy_decode
 
 RESULTS = RUNS / "int8.json"
 MAGIC = b"DLQ1"
@@ -133,12 +133,15 @@ def int_forward(q, rows_q):
     return int_conv(h, q["w3"][:, :, None], q["b3"], 1)
 
 
-def int_decode(q, rows):
-    """Float rows [T, 512] in, phoneme guess out, through the integer model."""
-    if len(rows) < SmallCNN.window:
-        return []
-    scores = int_forward(q, quantize_rows(rows.numpy(), q["in_inv_scale"]))
-    return greedy_decode(torch.from_numpy(scores), len(scores))
+def both_scores(model, q, rows):
+    """One sentence's float rows [T, 512] through the float model and through the integer model.
+
+    Returns (float scores, integer scores), each [T_out, 41].
+    """
+    with torch.no_grad():
+        real = model(rows[None])[0]
+    ints = int_forward(q, quantize_rows(rows.numpy(), q["in_inv_scale"]))
+    return real, torch.from_numpy(ints)
 
 
 def save_int8(q, path):
@@ -197,14 +200,14 @@ def compare(model, q, days):
         day_wrong = {"float": 0, "int8": 0}
         day_phonemes = sum(len(labels) for _, labels, _ in trials)
         for rows, labels, _ in trials:
-            day_wrong["float"] += edit_distance(decode(model, rows, "cpu"), labels.tolist())
-            day_wrong["int8"] += edit_distance(int_decode(q, rows), labels.tolist())
-            if len(rows) >= model.window:
-                with torch.no_grad():
-                    best_float = model(rows[None])[0].argmax(dim=-1).numpy()
-                best_int = int_forward(q, quantize_rows(rows.numpy(), q["in_inv_scale"])).argmax(axis=-1)
-                same += int((best_float == best_int).sum())
-                steps += len(best_int)
+            guesses = {"float": [], "int8": []}
+            if len(rows) >= model.window:   # shorter than one window: no output steps, so an empty guess
+                real, ints = both_scores(model, q, rows)
+                guesses = {"float": greedy_decode(real, len(real)), "int8": greedy_decode(ints, len(ints))}
+                same += int((real.argmax(dim=-1) == ints.argmax(dim=-1)).sum())
+                steps += len(ints)
+            for kind, guess in guesses.items():
+                day_wrong[kind] += edit_distance(guess, labels.tolist())
         for kind in wrong:
             wrong[kind] += day_wrong[kind]
             per_day[kind].append(day_wrong[kind] / day_phonemes)
@@ -217,7 +220,10 @@ def compare(model, q, days):
 
 
 def quantize_file(model_path, percentile=99.99, out=None):
-    """Float model file in, integer model file out. Returns (model, q, out_path, facts)."""
+    """Float model file in, integer model file out.
+
+    Returns (float model, integer model, where it was saved, what train.py recorded, sizes and settings).
+    """
     model, info = load_model(model_path)
     a1, a2 = output_ranges(model, load_split(info["days"], "train"), percentile)
     out = Path(out or Path(model_path).with_name(Path(model_path).stem + "_int8.bin"))

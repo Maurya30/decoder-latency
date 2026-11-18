@@ -66,6 +66,44 @@ def latency_chart(results, path):
     plt.close(fig)
 
 
+def size_chart(table, path):
+    """Phoneme error rate against the size of the 8-bit model file, one point per width.
+
+    table is sizes.py's {width: row}. Each width was trained several times; the dot is
+    the mean and the bar runs from the best run to the worst.
+    """
+    rows = sorted(table.items(), key=lambda item: item[1]["int8_bytes"])
+    runs_each = len(rows[0][1]["runs"])
+    fig, (ax,) = _new_chart("How small can the model get?",
+                            f"Phoneme error rate on the 267 validation sentences against the size of the model file. "
+                            f"Dot: mean of {runs_each} training runs. Bar: best to worst run.", (9.6, 4.8))
+    for kind, colour, name, nudge in (("float_per", ORANGE, "32-bit floats (same model, 4x the bytes)", 0.97),
+                                      ("int8_per", BLUE, "8-bit integers", 1.0)):
+        x = [row["int8_bytes"] / 1000 * nudge for _, row in rows]
+        runs = [[100 * run[kind] for run in row["runs"]] for _, row in rows]
+        means = [sum(r) / len(r) for r in runs]
+        for xi, r in zip(x, runs):
+            ax.plot([xi, xi], [min(r), max(r)], color=colour, linewidth=2, alpha=0.35, solid_capstyle="round", zorder=1)
+        ax.plot(x, means, color=colour, linewidth=2, marker="o", markersize=6, markeredgecolor=SURFACE,
+                markeredgewidth=1, label=name, zorder=3 if kind == "int8_per" else 2)
+        if kind == "int8_per":
+            for xi, mean, (width, row) in zip(x, means, rows):
+                ax.annotate(f"width {width}\n{row['int8_bytes'] / 1000:,.0f} kB, {mean:.0f}%", (xi, mean), xytext=(7, 9),
+                            textcoords="offset points", fontsize=8.5, color=INK_SOFT)
+    ax.set_xscale("log")
+    ax.set_xlim(rows[0][1]["int8_bytes"] / 1000 / 1.5, rows[-1][1]["int8_bytes"] / 1000 * 2.6)
+    ax.set_ylim(0, 100)
+    ax.xaxis.set_major_formatter(lambda v, _: f"{v:,.0f} kB")
+    ax.yaxis.set_major_formatter(lambda v, _: f"{v:g}%")
+    ax.grid(axis="y", color=GRID, linewidth=0.8)
+    ax.set_xlabel("size of the 8-bit model file (log scale)", color=INK_SOFT, fontsize=9)
+    ax.set_ylabel("phoneme error rate", color=INK_SOFT, fontsize=9)
+    ax.legend(loc="lower left", frameon=False, fontsize=8.5, labelcolor=INK_SOFT)
+    fig.subplots_adjust(left=0.09, right=0.97, top=0.82, bottom=0.12)
+    fig.savefig(path, facecolor=SURFACE)
+    plt.close(fig)
+
+
 def drop_chart(results, path):
     """Phoneme error rate against the share of frames lost, one line per thing the receiver can do.
 
