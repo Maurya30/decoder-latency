@@ -1,0 +1,18 @@
+[package]
+name = "firmware"
+version = "0.1.0"
+edition = "2021"
+description = "The decoder as a bare-metal ARM Cortex-M image: for its flash and RAM size, and a self-test in an emulator"
+publish = false
+
+[dependencies]
+decoder = { path = ".." }
+cortex-m = "0.7"                # reading the stack pointer
+cortex-m-rt = "0.7"             # the startup code: vector table, zeroing RAM, calling main
+cortex-m-semihosting = "0.6"    # printing through the debugger or emulator; a real product would not have this
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"

@@ -1,0 +1,19 @@
+{
+  "measured": "2026-11-18",
+  "target": "thumbv7em-none-eabihf",
+  "model": "runs/cnn_int8.bin",
+  "sections": {
+    ".vector_table": 1024,
+    ".text": 6700,
+    ".rodata": 1391092,
+    ".bss": 7848
+  },
+  "flash_bytes": 1398816,
+  "model_bytes": 1391044,
+  "static_ram_bytes": 7848,
+  "emulator": "qemu-system-arm cortex-m4 mps2-an386",
+  "steps": 200,
+  "checksum_matches_python": true,
+  "stack_bytes": 208,
+  "decoder_bytes": 5800
+}

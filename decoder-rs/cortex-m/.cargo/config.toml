@@ -1,0 +1,8 @@
+[build]
+# ARM Cortex-M4 and M7 with a hardware float unit. An instruction set, not a particular board.
+target = "thumbv7em-none-eabihf"
+
+[target.thumbv7em-none-eabihf]
+rustflags = ["-C", "link-arg=-Tlink.x"]   # cortex-m-rt's linker script, which reads memory.x
+# `cargo run` starts the image in QEMU's model of ARM's MPS2 development board (image AN386, a Cortex-M4).
+runner = "qemu-system-arm -cpu cortex-m4 -machine mps2-an386 -nographic -semihosting-config enable=on,target=native -kernel"
